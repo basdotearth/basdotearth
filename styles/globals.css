@@ -8,17 +8,41 @@
   --bg: var(--cream);
   --accent: var(--blue);
   --border: var(--fg) / 50%;
+  --font-sans: Palanquin, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --font-mono: Fira Code, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+  Bitstream Vera Sans Mono, Courier New, monospace;
+  --fw-regular: 300;
+  --fw-bold: 500;
+  --fw-brand: 700;
+  --fw-code-regular: 400;
+  --fw-code-bold: 600;
+  --gradient: linear-gradient(to right, rgb(var(--blue)), rgb(var(--yellow)));
+  --transition: 150ms ease;
 }
 
 html, body {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    color: rgb(var(--fg));
-    background: rgb(var(--bg));
+  font-family: var(--font-sans);
+  font-weight: var(--fw-regular);
+  color: rgb(var(--fg));
+  background: rgb(var(--bg));
+}
+
+bold, strong {
+  font-weight: var(--fw-bold);
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: var(--fw-bold);
 }
 
 a {
   color: rgb(var(--accent));
+}
+
+code, pre {
+  font-family: var(--font-mono);
+  font-weight: var(--fw-code-regular);
 }
 
 @media (prefers-color-scheme: dark) {

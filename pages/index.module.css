@@ -2,6 +2,13 @@
   padding: 0 2rem;
 }
 
+.brand {
+  font-weight: var(--fw-brand);
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .main {
   min-height: 100vh;
   padding: 4rem 0;
@@ -56,13 +63,11 @@
 }
 
 .code {
+  padding: 0.75rem;
   background: rgb(var(--fg));
+  font-size: 1.1rem;
   color: rgb(var(--bg));
   border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
 .grid {
@@ -81,7 +86,7 @@
   text-decoration: none;
   border: 1px solid rgba(var(--border));
   border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: color var(--transition), border-color var(--transition);
   max-width: 300px;
 }
 
