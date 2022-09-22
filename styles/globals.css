@@ -8,7 +8,7 @@
   --bg: var(--cream);
   --accent: var(--blue);
   --title: var(--peach);
-  --border: var(--fg) / 50%;
+  --border: var(--fg) / 20%;
   --width-lg: 60rem;
   --width-md: 40rem;
   --font-sans: Palanquin, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
