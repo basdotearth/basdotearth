@@ -1,0 +1,41 @@
+.header {
+  --brand-size: 1.5rem;
+  --link-spacing: 2rem;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+}
+
+.headerFilled {
+  background-color: rgb(var(--bg));
+}
+
+.innerWrapper {
+  display: flex;
+  width: 100%;
+  max-width: var(--width-lg);
+  margin: 0 auto;
+  padding: 1rem 0;
+  line-height: var(--brand-size);
+}
+
+.brand {
+  margin: 0 calc(2 * var(--link-spacing)) 0 0;
+  font-size: var(--brand-size);
+  font-weight: var(--fw-bold);
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  user-select: none;
+}
+
+.textNav {
+  flex: 1;
+  line-height: 1.7rem;
+}
+
+.textNav a {
+  margin: 0 var(--link-spacing) 0 0;
+  letter-spacing: 0.5px;
+  color: inherit;
+}
