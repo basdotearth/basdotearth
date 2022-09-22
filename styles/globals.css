@@ -7,14 +7,17 @@
   --fg: var(--charcoal);
   --bg: var(--cream);
   --accent: var(--blue);
+  --title: var(--peach);
   --border: var(--fg) / 50%;
+  --width-lg: 60rem;
+  --width-md: 40rem;
   --font-sans: Palanquin, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --font-mono: Fira Code, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
   Bitstream Vera Sans Mono, Courier New, monospace;
   --fw-regular: 300;
-  --fw-bold: 500;
-  --fw-brand: 700;
+  --fw-semibold: 500;
+  --fw-bold: 700;
   --fw-code-regular: 400;
   --fw-code-bold: 600;
   --gradient: linear-gradient(to right, rgb(var(--blue)), rgb(var(--yellow)));
@@ -32,8 +35,40 @@ bold, strong {
   font-weight: var(--fw-bold);
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: var(--fw-bold);
+  color: rgb(var(--title));
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+
+small, .text_small {
+  font-size: 0.75rem;
 }
 
 a {
@@ -45,10 +80,23 @@ code, pre {
   font-weight: var(--fw-code-regular);
 }
 
+p.lead {
+  margin: 0 0 2rem;
+  font-weight: var(--fw-semibold);
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+::selection {
+  color: rgb(var(--charcoal));
+  background-color: rgb(var(--accent));
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --fg: var(--cream);
     --bg: var(--charcoal);
+    --title: var(--blue);
   }
 
   html {
