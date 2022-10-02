@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useEffect, useState, type FC } from 'react';
+import { type FC } from 'react';
 
 import Icon, { EIcons } from '../icon';
 import styles from './header.module.css';

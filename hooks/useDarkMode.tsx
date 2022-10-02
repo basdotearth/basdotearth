@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { Dispatch, useEffect, useState } from 'react';
 
-const useDarkMode = () => {
+const useDarkMode = (): [boolean, Dispatch<boolean>] => {
   const [darkMode, setDarkMode] = useState(false);
   const [initial, setInitial] = useState(true);
 

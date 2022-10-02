@@ -98,7 +98,7 @@ const Resume: NextPage = () => {
       <section className={styles.hobbies}>
         <h3 className={styles.sectionTitle}>Hobbies & Personal Life</h3>
         <p>I like to tinker with IoT devices and (TS-)Node, both separately and combined. I work to improve myself and my colleagues, and to earn the money I spend travelling Europe and the world.</p>
-        <p>In 2019 I took a 6-week holiday to Australia with one 35-liter backpack, and straight after I enjoyed a year of working in Hungary. Travelling has taught me to make the most out of the least amount of stuff, and I try to keep my possessions to a minimum. I still enjoy my books and vinyl records, and I'm a sucker for dark beer and a good board game.</p>
+        <p>In 2019 I took a 6-week holiday to Australia with one 35-liter backpack, and straight after I enjoyed a year of working in Hungary. Travelling has taught me to make the most out of the least amount of stuff, and I try to keep my possessions to a minimum. I still enjoy my books and vinyl records, and I&apos;m a sucker for dark beer and a good board game.</p>
       </section>
     </main>
     <Footer />

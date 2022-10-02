@@ -22,6 +22,7 @@
   --fw-code-bold: 600;
   --gradient: linear-gradient(to right, rgb(var(--blue)), rgb(var(--yellow)));
   --transition: 150ms ease;
+  --z-header: 10;
 }
 
 html, body {
