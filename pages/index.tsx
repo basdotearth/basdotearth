@@ -8,6 +8,7 @@ import examplePosts from '../mocks/blog';
 import exampleItems from '../mocks/playground';
 
 import styles from './home.module.css';
+import Icon, { EIcons } from '../components/icon';
 
 const Home: NextPage = () => {
   return <>
@@ -43,7 +44,10 @@ const Home: NextPage = () => {
             <Link href={item.link} key={`item--${index}`}>
               <a className={styles.itemCard}>
                 <h2 className={styles.itemTitle}>{item.title}</h2>
-                <p className={styles.itemTags}>{item.tags.join(', ')}</p>
+                <div className={styles.itemTaglist}>
+                  <Icon icon={EIcons.Tag} width={12} height={12} />
+                  <p className={styles.itemTags}>{item.tags.join(', ')}</p>
+                </div>
               </a>
             </Link>
           )) }

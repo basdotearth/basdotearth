@@ -84,10 +84,23 @@
   transition: color var(--transition);
 }
 
+.itemTaglist {
+  position: relative;
+}
+
+.itemTaglist > div {
+  position: absolute;
+  top: -4px;
+  color: rgba(var(--fg) / 40%);
+}
+
 .itemTags {
   margin: 0;
   font-size: 0.75rem;
+  text-indent: 1rem;
 }
+
+
 
 .postButton::after,
 .itemCard::after {
