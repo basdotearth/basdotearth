@@ -48,3 +48,59 @@
   font-size: 1.5rem;
   grid-column: 1 / -1;
 }
+
+
+.postItem {
+  --arrow-opacity: 0;
+  --arrow-offset: 0rem;
+  --title-color: var(--fg);
+  --border: var(--fg) / 40%;
+  display: flex;
+  margin: 0 0 3rem;
+  padding: 1rem;
+  color: rgb(var(--fg));
+  flex-direction: column;
+  border: 1px solid rgba(var(--border));
+  border-radius: 0.5rem;
+  transition: border var(--transition);
+}
+
+.postTitle {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  font-weight: var(--fw-semibold);
+  color: rgb(var(--title-color));
+  transition: color var(--transition);
+}
+
+.postIntro {
+  margin: 0 0 0.5rem;
+  flex: 1;
+}
+
+.postButton {
+  position: relative;
+  font-size: 1rem;
+  font-weight: var(--fw-bold);
+}
+
+.postButton::after {
+  position: absolute;
+  top: 0;
+  left: calc(100% + var(--arrow-offset));
+  display: block;
+  content: '\2192';
+  color: rgb(var(--accent));
+  opacity: var(--arrow-opacity);
+  transition: opacity var(--transition), left var(--transition), right var(--transition);
+}
+
+.postItem:hover,
+.postItem:active,
+.postItem:focus {
+  --arrow-opacity: 1;
+  --arrow-offset: 1rem;
+  --title-color: var(--accent);
+  --border: var(--accent);
+}
