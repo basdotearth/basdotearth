@@ -33,3 +33,18 @@
   color: rgb(var(--bg));
   border-radius: 5px;
 }
+
+.overview {
+  display: grid;
+  margin: 6rem auto 0;
+  width: 100%;
+  max-width: var(--width-lg);
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3rem;
+}
+
+.overviewTitle {
+  margin: 0 0 2rem;
+  font-size: 1.5rem;
+  grid-column: 1 / -1;
+}

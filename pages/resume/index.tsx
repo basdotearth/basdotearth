@@ -3,43 +3,12 @@ import type { NextPage } from 'next';
 
 import Header from '../../components/header';
 import Footer from '../../components/footer';
-import styles from './resume.module.css';
 import Icon, { EIcons } from '../../components/icon';
+import exampleExperience from '../../mocks/experience';
+import exampleEducation from '../../mocks/education';
+import { isoToMonthYear } from '../../helpers/date';
 
-type TExperience = {
-  start: string;
-  end?: string;
-  company: string;
-  description: string;
-  location: string;
-  tags: string[];
-}
-
-type TEducation = {
-  title: string;
-  byline?: string;
-  start: string;
-  end?: string;
-}
-
-const exampleExperience: TExperience[] = [{
-  start: '2022-04-01',
-  end: '2022-10-01',
-  company: 'viaBOVAG.nl',
-  description: 'viaBOVAG.nl allows it\'s visitors to find their next car by looking through what\'s available at all of BOVAG\'s car-dealers within seconds. The Apollo team manages and maintains the platform and implements new features for both visitors and platform-managers.\n\nRecent projects include a massive overhaul of the old MVC platform to a JS-based SSR-stack and implementing a headless CMS to shorten the workflow for content-managers.',
-  location: 'Bunnik, NL',
-  tags: ['NextJS', 'Typescript', 'Headless CMS', 'Platform'],
-}];
-
-const exampleEducation: TEducation[] = [{
-  title: 'LEAN Green Belt',
-  byline: 'LCS Level 1b / 12M-01791',
-  start: '2018',
-}];
-
-const printIsoDate = (isoDate: string): string => {
-  return new Date(isoDate).toLocaleDateString('en-UK', { month: 'short', year: 'numeric'});
-};
+import styles from './resume.module.css';
 
 const Resume: NextPage = () => {
   return <>
@@ -68,8 +37,8 @@ const Resume: NextPage = () => {
             <div className={styles.experienceHeader}>
               <h2 className={styles.experienceTitle}>{exp.company}</h2>
               <p className={styles.experienceDate}>
-                {printIsoDate(exp.start)}
-                {exp.end && ` - ${printIsoDate(exp.end)}`}
+                {isoToMonthYear(exp.start)}
+                {exp.end && ` - ${isoToMonthYear(exp.end)}`}
               </p>
             </div>
             <p className={styles.experienceDescription}>{exp.description}</p>
