@@ -1,0 +1,146 @@
+.pageHeader {
+  --header-margin: 6rem;
+  margin: 0 0 2rem;
+  padding: 0 0 var(--header-margin);
+  background-color: rgba(var(--fg) / 5%);
+}
+
+.headerTitle {
+  margin: var(--header-margin) 0 0;
+  color: currentColor;
+  font-size: 2.5rem;
+  font-weight: var(--fw-bold);
+  line-height: 1.15;
+}
+
+.headerSupport {
+  margin: 0 0 3rem;
+  font-size: 1.5rem;
+  font-weight: var(--fw-regular);
+  line-height: 1.15;
+}
+
+.lead {
+  --arrow-offset: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.lead > li {
+  position: relative;
+  margin: 0 0 0.5rem var(--arrow-offset);
+}
+
+.lead > li::before {
+  position: absolute;
+  content: '\2192';
+  left: calc(-1 * var(--arrow-offset));
+  color: rgb(var(--accent));
+}
+
+.headerContent {
+  flex: 1;
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  max-width: var(--width-lg);
+  flex-direction: column;
+  grid-template-columns: 2.5fr 1fr;
+  column-gap: 3rem;
+}
+
+.main {
+  display: grid;
+  margin: 0 auto;
+  width: 100%;
+  max-width: var(--width-lg);
+  grid-template-columns: 2.5fr 1fr;
+  column-gap: 3rem;
+}
+
+.sectionTitle {
+  margin: 0 0 2rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.experience {
+  grid-column: 1 / 2;
+}
+
+.experienceItem {
+  display: block;
+  margin: 0 0 3rem;
+  color: rgb(var(--fg));
+}
+
+.experienceHeader {
+  display: flex;
+  margin: 0 0 1rem;
+  align-items: flex-end;
+}
+
+.experienceTitle {
+  flex: 1;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  font-weight: var(--fw-semibold);
+  color: currentColor;
+}
+
+.experienceDate {
+  margin: 0;
+  color: rgba(var(--fg) / 40%);
+}
+
+.experienceDescription {
+  margin: 0 0 0.5rem;
+  line-height: 1.5;
+}
+
+.experienceTaglist {
+  display: flex;
+}
+
+.experienceTag {
+  display: flex;
+  margin: 0 1rem 0 0;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: var(--fw-bold);
+  color: rgba(var(--fg) / 40%);
+}
+
+.experienceTag > div {
+  margin: 0 0.25rem 0 0;
+}
+
+.sidebar {
+  grid-column: 3 / -1;
+}
+
+.educationItem {
+  margin: 0 0 1.5rem;
+  padding: 1rem;
+  border: 1px solid rgba(var(--fg) / 40%);
+  border-radius: 0.5rem;
+  transition: border var(--transition);
+}
+
+.educationTitle {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  font-weight: var(--fw-semibold);
+  color: rgb(var(--title-color));
+  transition: color var(--transition);
+}
+
+.educationByline {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.hobbies {
+  grid-column: 1 / -1;
+}
