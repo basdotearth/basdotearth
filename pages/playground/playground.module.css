@@ -1,0 +1,84 @@
+.overview {
+  margin: 6rem auto 0;
+  width: 100%;
+  max-width: var(--width-lg);
+}
+
+.overviewTitle {
+  margin: 0;
+  color: currentColor;
+  font-size: 2.5rem;
+  font-weight: var(--fw-bold);
+  line-height: 1.15;
+}
+
+.overviewSupport {
+  margin: 0 0 2rem;
+  font-size: 1.5rem;
+  font-weight: var(--fw-regular);
+  line-height: 1.15;
+}
+
+.itemCard {
+  --arrow-opacity: 0;
+  --arrow-offset: 0rem;
+  --title-color: var(--fg);
+  position: relative;
+  display: block;
+  margin: 0 0 1.5rem;
+  padding: 1rem;
+  color: rgb(var(--fg));
+  border: 1px solid rgba(var(--border));
+  border-radius: 0.5rem;
+  transition: border var(--transition);
+}
+
+.itemCard::after {
+  position: absolute;
+  top: calc(50% - 1rem);
+  right: var(--arrow-offset);
+  display: block;
+  content: '\2192';
+  color: rgb(var(--accent));
+  opacity: var(--arrow-opacity);
+  transition: opacity var(--transition), left var(--transition), right var(--transition);
+}
+
+.itemCard:hover,
+.itemCard:active,
+.itemCard:focus {
+  --arrow-opacity: 1;
+  --arrow-offset: 1rem;
+  --title-color: var(--accent);
+  --border: var(--accent);
+}
+
+.itemTitle {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.25;
+  font-weight: var(--fw-semibold);
+  color: rgb(var(--title-color));
+  transition: color var(--transition);
+}
+
+.itemDescription {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+}
+
+.itemTaglist {
+  position: relative;
+}
+
+.itemTaglist > div {
+  position: absolute;
+  top: -4px;
+  color: rgba(var(--fg) / 40%);
+}
+
+.itemTags {
+  margin: 0;
+  font-size: 0.75rem;
+  text-indent: 1rem;
+}
