@@ -103,6 +103,7 @@ body.dark {
   --bg: var(--charcoal);
   --accent: var(--blue);
   --title: var(--accent);
+  --border: var(--fg) / 20%;
 }
 
 .fillSVG {

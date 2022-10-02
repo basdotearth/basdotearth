@@ -54,7 +54,6 @@
   --arrow-opacity: 0;
   --arrow-offset: 0rem;
   --title-color: var(--fg);
-  --border: var(--fg) / 40%;
   display: flex;
   margin: 0 0 3rem;
   padding: 1rem;
