@@ -17,6 +17,7 @@ const BlogOverview: NextPage = () => {
     <Header />
     <main className={styles.overview}>
       <h1 className={styles.overviewTitle}>Blogposts</h1>
+      <h1 className={styles.overviewSupport}>Both code-related and otherwise.</h1>
       { examplePosts.map((post, index) => (
           <Link href={post.link} key={`post--${index}`}>
             <a className={styles.postItem}>
