@@ -5,9 +5,11 @@ import { getMDXComponent } from 'mdx-bundler/client';
 
 import Header from '../../components/header';
 import Footer from '../../components/footer';
-import styles from './blog.module.css';
-import { BlogPostMeta, MDXStaticPage, MDXStaticPaths, MDXStaticPageProps } from '../../types';
+import type { BlogPostMeta } from '../../types';
+import type { MDXStaticPage, MDXStaticPaths, MDXStaticPageProps } from '../../types/mdx';
 import { getStaticContentBySlug, collectStaticContentSlugs } from '../../helpers/mdx';
+
+import styles from './blog.module.css';
 
 const BlogPost: MDXStaticPage<BlogPostMeta> = ({ code, meta }) => {
   const BlogContent = useMemo(() => getMDXComponent(code), [code]);
