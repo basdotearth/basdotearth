@@ -6,9 +6,9 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 import examplePosts from '../mocks/blog';
 import exampleItems from '../mocks/playground';
+import Icon, { EIcons } from '../components/icon';
 
 import styles from './home.module.css';
-import Icon, { EIcons } from '../components/icon';
 
 const Home: NextPage = () => {
   return <>

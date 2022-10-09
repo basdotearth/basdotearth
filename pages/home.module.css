@@ -100,8 +100,6 @@
   text-indent: 1rem;
 }
 
-
-
 .postButton::after,
 .itemCard::after {
   position: absolute;
