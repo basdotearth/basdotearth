@@ -1,9 +1,3 @@
-export type TBlogPost = {
-  title: string;
-  intro: string;
-  link: string;
-};
-
 export type TPlaygroundItem = {
   title: string;
   tags: string[];
@@ -24,4 +18,12 @@ export type TEducation = {
   byline?: string;
   start: string;
   end?: string;
+};
+
+export type BlogPostMeta = {
+  title: string;
+  seoTitle: string;
+  abstract: string;
+  isPublished: boolean;
+  publishedOn: Date;
 };
