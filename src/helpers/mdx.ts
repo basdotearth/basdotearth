@@ -4,7 +4,14 @@ import { join } from 'path';
 import matter from 'gray-matter';
 import { readdir, readFile } from 'fs/promises';
 
-import type { CollectedArray, ErrorResult, PageTypeContent } from '../types/mdx';
+import type {
+  CollectedItem,
+  CollectedResult,
+  ContentFilter,
+  ContentSort,
+  ErrorResult,
+  PageTypeContent,
+} from '../types/mdx';
 
 type staticContent = 'posts' | 'playground' | 'resumeText' | 'resumeExperience' | 'resumeEducation';
 
@@ -27,15 +34,23 @@ export const collectStaticContentSlugs = async (contentType: staticContent): Pro
   return files.map(path => path.replace(/\.mdx?$/, ''));
 };
 
-export const collectStaticContent = async <Meta>(
-  contentType: staticContent,
-): Promise<{ items: CollectedArray<Meta> } | ErrorResult> => {
+interface CollectStaticContentProps<Meta> {
+  type: staticContent,
+  filter?: ContentFilter<Meta>,
+  sort?: ContentSort<Meta>,
+};
+
+export const collectStaticContent = async <Meta>({
+  type,
+  filter,
+  sort,
+}: CollectStaticContentProps<Meta>): Promise<CollectedResult<Meta> | ErrorResult> => {
   try {
-    const files = await collectStaticContentFiles(contentType);
-    const items: (Meta & { slug: string })[] = [];
+    const files = await collectStaticContentFiles(type);
+    const items: CollectedItem<Meta>[] = [];
 
     for (let file of files) {
-      const path = join(staticContentPaths[contentType], file);
+      const path = join(staticContentPaths[type], file);
       const rawFile = await readFile(path);
       const content = matter(rawFile.toString());
       if (content.data) {
@@ -46,7 +61,14 @@ export const collectStaticContent = async <Meta>(
       }
     }
 
-    return { items };
+    const defaultFilter = (item: CollectedItem<Meta>) => item;
+    const defaultSort = (a: CollectedItem<Meta>, b: CollectedItem<Meta>) => 1;
+
+    return {
+      items: items
+        .filter(filter || defaultFilter)
+        .sort(sort || defaultSort),
+    };
   } catch(e) {
     return { errorCode: 500 };
   }

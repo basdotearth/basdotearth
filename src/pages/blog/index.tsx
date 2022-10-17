@@ -39,7 +39,12 @@ const BlogOverview: MDXOverviewPage<BlogPostMeta> = ({ items }) => {
 export default BlogOverview;
 
 export const getStaticProps: MDXOverviewPageProps<BlogPostMeta> = async () => {
+
   return {
-    props: await collectStaticContent('posts'),
+    props: await collectStaticContent({
+      type: 'posts',
+      filter: (i) => i.isPublished,
+      sort: (a, b) => (new Date(a.publishedOn)).valueOf() - (new Date(b.publishedOn)).valueOf(),
+    }),
   };
 };
