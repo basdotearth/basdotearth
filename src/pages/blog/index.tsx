@@ -1,6 +1,6 @@
-import Head from 'next/head';
 import Link from 'next/link';
 
+import Head from '../../components/Head';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 
@@ -12,9 +12,7 @@ import styles from './blog.module.css';
 
 const BlogOverview: MDXOverviewPage<BlogPostMeta> = ({ items }) => {
   return <>
-    <Head>
-      <meta name="description" content={`${items.length} blogposts on code and other things.`} />
-    </Head>
+    <Head title="Blog" description={`${items.length} blogposts on code and other things.`} />
 
     <Header />
     <main className={styles.overview}>
