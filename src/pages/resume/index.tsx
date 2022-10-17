@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import type { NextPage } from 'next';
 
-import Header from '../../components/_header';
-import Footer from '../../components/_footer';
-import Icon, { EIcons } from '../../components/_icon/index';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import Icon, { EIcons } from '../../components/Icon/index';
 import exampleExperience from '../../mocks/experience';
 import exampleEducation from '../../mocks/education';
 import { isoToMonthYear } from '../../helpers/date';

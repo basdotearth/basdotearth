@@ -2,9 +2,9 @@ import Head from 'next/head';
 import Link from 'next/link';
 import type { NextPage } from 'next';
 
-import Header from '../../components/_header';
-import Footer from '../../components/_footer';
-import Icon, { EIcons } from '../../components/_icon/index';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import Icon, { EIcons } from '../../components/Icon/index';
 import exampleItems from '../../mocks/playground';
 
 import styles from './playground.module.css';

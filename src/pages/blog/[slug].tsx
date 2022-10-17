@@ -3,8 +3,8 @@ import { useMemo } from 'react';
 import { getMDXComponent } from 'mdx-bundler/client';
 
 import Head from '../../components/Head';
-import Header from '../../components/_header';
-import Footer from '../../components/_footer';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import type { BlogPostMeta } from '../../types';
 import type { MDXStaticPage, MDXStaticPaths, MDXStaticPageProps } from '../../types/mdx';
 import { getStaticContentBySlug, collectStaticContentSlugs } from '../../helpers/mdx';
