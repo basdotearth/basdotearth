@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 import Head from '../../components/Head';
-import Header from '../../components/header';
-import Footer from '../../components/footer';
+import Header from '../../components/_header';
+import Footer from '../../components/_footer';
 
 import { collectStaticContent } from '../../helpers/mdx';
 import type { BlogPostMeta } from '../../types';

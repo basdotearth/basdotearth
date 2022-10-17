@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { type FC } from 'react';
 
-import Icon, { EIcons } from '../icon';
+import Icon, { EIcons } from '../_icon/index';
 import styles from './header.module.css';
 import useDarkMode from '../../hooks/useDarkMode';
 
