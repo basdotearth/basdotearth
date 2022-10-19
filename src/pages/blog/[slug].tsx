@@ -1,32 +1,7 @@
-import { useMemo } from 'react';
-
-import { getMDXComponent } from 'mdx-bundler/client';
-
-import Head from '../../components/Head';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import BlogPost from '../../components/Pages/BlogPost';
 import type { BlogPostMeta } from '../../types';
-import type { MDXStaticPage, MDXStaticPaths, MDXStaticPageProps } from '../../types/mdx';
+import type { MDXStaticPaths, MDXStaticPageProps } from '../../types/mdx';
 import { getStaticContentBySlug, collectStaticContentSlugs } from '../../helpers/mdx';
-
-import styles from './blog.module.css';
-
-const BlogPost: MDXStaticPage<BlogPostMeta> = ({ code, meta }) => {
-  const BlogContent = useMemo(() => getMDXComponent(code), [code]);
-
-  return <>
-    <Head title={meta.title} description={meta.seoTitle} />
-
-    <Header />
-    <main className={styles.main}>
-      <h1 className={styles.title}>{ meta.title }</h1>
-
-      <p className="lead">{ meta.abstract }</p>
-      <BlogContent />
-    </main>
-    <Footer />
-  </>;
-};
 
 export const getStaticPaths: MDXStaticPaths = async () => {
   const slugs = await collectStaticContentSlugs('posts');
