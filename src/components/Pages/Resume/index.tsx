@@ -3,7 +3,7 @@ import type { NextPage } from 'next';
 
 import Header from '../../Header';
 import Footer from '../../Footer';
-import Icon, { EIcons } from '../../Icon';
+import TagList from '../../TagList';
 import exampleExperience from '../../../mocks/experience';
 import exampleEducation from '../../../mocks/education';
 import { isoToMonthYear } from '../../../helpers/date';
@@ -42,14 +42,7 @@ const Resume: NextPage = () => {
               </p>
             </div>
             <p className={styles.experienceDescription}>{exp.description}</p>
-            <div className={styles.experienceTaglist}>
-              { exp.tags.map((tag, index) => (
-                <div className={styles.experienceTag} key={`tag--${index}`}>
-                  <Icon icon={EIcons.Tag} width={16} height={16} />
-                  {tag}
-                </div>
-              ))}
-            </div>
+            <TagList tags={exp.tags} />
           </div>
         )) }
 

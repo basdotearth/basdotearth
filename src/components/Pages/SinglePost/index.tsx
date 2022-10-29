@@ -5,6 +5,7 @@ import { getMDXComponent } from 'mdx-bundler/client';
 import Head from '../../Head';
 import Header from '../../Header';
 import Footer from '../../Footer';
+import TagList from '../../TagList';
 import type { BlogPostMeta, PlaygroundMeta } from '../../../types';
 import type { MDXStaticPage } from '../../../types/mdx';
 
@@ -22,7 +23,7 @@ const SinglePost: MDXStaticPage<BlogPostMeta | PlaygroundMeta> = ({ code, meta }
 
       {'abstract' in meta && <p className="lead">{ meta.abstract }</p>}
       <BlogContent />
-      {'tags' in meta && <p>{ meta.tags.join(', ') }</p>}
+      {'tags' in meta && <TagList tags={meta.tags} />}
     </main>
     <Footer />
   </>;

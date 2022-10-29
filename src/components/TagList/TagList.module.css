@@ -1,0 +1,16 @@
+.taglist {
+  display: flex;
+}
+
+.tag {
+  display: flex;
+  margin: 0 1rem 0 0;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: var(--fw-bold);
+  color: rgba(var(--fg) / 40%);
+}
+
+.tag > div {
+  margin: 0 0.25rem 0 0;
+}

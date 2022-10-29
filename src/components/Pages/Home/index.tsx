@@ -4,8 +4,10 @@ import type { NextPage } from 'next';
 
 import Header from '../../Header';
 import Footer from '../../Footer';
+import TagList from '../../TagList';
 import exampleItems from '../../../mocks/playground';
 import Icon, { EIcons } from '../../Icon';
+import type { BlogPostMeta } from '../../../types';
 
 import styles from './Home.module.css';
 
@@ -24,11 +26,11 @@ const Home: NextPage = () => {
         <h3 className={styles.contentHeading}>
           Recent Blogposts
         </h3>
-        { [].map((post, index) => (
-          <Link href={post.link} key={`post--${index}`}>
+        { ([] as BlogPostMeta[]).map((post, index) => (
+          <Link href={''} key={`post--${index}`}>
             <a className={styles.postCard}>
               <h2 className={styles.postTitle}>{post.title}</h2>
-              <p className={styles.postIntro}>{post.intro}</p>
+              <p className={styles.postIntro}>{post.abstract}</p>
               <button className={styles.postButton}>Read More</button>
             </a>
           </Link>
@@ -43,10 +45,7 @@ const Home: NextPage = () => {
             <Link href={item.link} key={`item--${index}`}>
               <a className={styles.itemCard}>
                 <h2 className={styles.itemTitle}>{item.title}</h2>
-                <div className={styles.itemTaglist}>
-                  <Icon icon={EIcons.Tag} width={12} height={12} />
-                  <p className={styles.itemTags}>{item.tags.join(', ')}</p>
-                </div>
+                <TagList tags={item.tags} />
               </a>
             </Link>
           )) }
