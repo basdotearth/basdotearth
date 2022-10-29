@@ -27,3 +27,11 @@ export type BlogPostMeta = {
   isPublished: boolean;
   publishedOn: Date;
 };
+
+export type PlaygroundMeta = {
+  title: string;
+  seoTitle: string;
+  tags: string[];
+  isPublished: boolean;
+  publishedOn: Date;
+};
