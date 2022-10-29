@@ -5,12 +5,12 @@ import { getMDXComponent } from 'mdx-bundler/client';
 import Head from '../../Head';
 import Header from '../../Header';
 import Footer from '../../Footer';
-import type { BlogPostMeta } from '../../../types';
+import type { BlogPostMeta, PlaygroundMeta } from '../../../types';
 import type { MDXStaticPage } from '../../../types/mdx';
 
-import styles from './BlogPost.module.css';
+import styles from './SinglePost.module.css';
 
-const BlogPost: MDXStaticPage<BlogPostMeta> = ({ code, meta }) => {
+const SinglePost: MDXStaticPage<BlogPostMeta | PlaygroundMeta> = ({ code, meta }) => {
   const BlogContent = useMemo(() => getMDXComponent(code), [code]);
 
   return <>
@@ -20,11 +20,12 @@ const BlogPost: MDXStaticPage<BlogPostMeta> = ({ code, meta }) => {
     <main className={styles.main}>
       <h1 className={styles.title}>{ meta.title }</h1>
 
-      <p className="lead">{ meta.abstract }</p>
+      {'abstract' in meta && <p className="lead">{ meta.abstract }</p>}
       <BlogContent />
+      {'tags' in meta && <p>{ meta.tags.join(', ') }</p>}
     </main>
     <Footer />
   </>;
 };
 
-export default BlogPost;
+export default SinglePost;
