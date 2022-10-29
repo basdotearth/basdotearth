@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import Header from '../../Header';
 import Footer from '../../Footer';
-import Icon, { EIcons } from '../../Icon';
+import TagList from '../../TagList';
 
 import type { PlaygroundMeta } from '../../../types';
 import type { MDXOverviewPage } from '../../../types/mdx';
@@ -27,10 +27,7 @@ const PlaygroundOverview: MDXOverviewPage<PlaygroundMeta> = ({ items }) => {
             <p className={styles.itemDescription}>
               { item.seoTitle }
             </p>
-            <div className={styles.itemTaglist}>
-              <Icon icon={EIcons.Tag} width={12} height={12} />
-              <p className={styles.itemTags}>{item.tags.join(', ')}</p>
-            </div>
+            <TagList tags={item.tags} />
           </a>
         </Link>
       )) }
