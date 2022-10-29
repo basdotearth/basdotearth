@@ -8,7 +8,7 @@
   align-items: center;
   font-size: 0.8rem;
   font-weight: var(--fw-bold);
-  color: rgba(var(--fg) / 40%);
+  color: rgba(var(--fg) / 60%);
 }
 
 .tag > div {
