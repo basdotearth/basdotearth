@@ -34,3 +34,8 @@
   margin: 0;
   color: rgba(var(--fg) / 50%);
 }
+
+.beans {
+  display: inline-block;
+  filter: hue-rotate(90deg) brightness(2);
+}
