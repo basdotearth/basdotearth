@@ -8,11 +8,12 @@ export type PageTypeContent<Meta> = {
   meta: Meta;
 };
 
-export type PageTypeSlug = {
+export type PageTypeMeta = {
+  excerpt: string;
   slug: string;
 };
 
-export type CollectedItem<Meta> = Meta & PageTypeSlug;
+export type CollectedItem<Meta> = Meta & PageTypeMeta;
 
 export type CollectedResult<Meta> = {
   items: CollectedItem<Meta>[];
@@ -25,9 +26,9 @@ export type CombinedResult<Meta extends Record<string, unknown>, withError = tru
 
 export type MDXStaticPage<Meta> = NextPage<PageTypeContent<Meta>>;
 export type MDXOverviewPage<Meta> = NextPage<CollectedResult<Meta>>;
-export type MDXStaticPageProps<Meta> = GetStaticProps<PageTypeContent<Meta> | ErrorResult, PageTypeSlug>;
-export type MDXOverviewPageProps<Meta> = GetStaticProps<CollectedResult<Meta> | ErrorResult, PageTypeSlug>;
-export type MDXStaticPaths = GetStaticPaths<PageTypeSlug>;
+export type MDXStaticPageProps<Meta> = GetStaticProps<PageTypeContent<Meta> | ErrorResult, PageTypeMeta>;
+export type MDXOverviewPageProps<Meta> = GetStaticProps<CollectedResult<Meta> | ErrorResult, PageTypeMeta>;
+export type MDXStaticPaths = GetStaticPaths<PageTypeMeta>;
 
 export type MDXCombinedPageProps<Meta extends Record<string, unknown>> = GetStaticProps<
   { [I in keyof Meta]: CollectedResult<Meta[I]> } | ErrorResult

@@ -52,10 +52,11 @@ export const collectStaticContent = async <Meta>({
     for (let file of files) {
       const path = join(staticContentPaths[type], file);
       const rawFile = await readFile(path);
-      const content = matter(rawFile.toString());
+      const content = matter(rawFile.toString(), { excerpt: true });
       if (content.data) {
         items.push({
           ...content.data as Meta,
+          excerpt: content.excerpt || '',
           slug: file.replace(/\.mdx?$/, ''),
         });
       }
