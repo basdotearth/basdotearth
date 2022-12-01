@@ -1,9 +1,11 @@
 import Head from 'next/head';
 import type { NextPage } from 'next';
 
+import AngledBorder from '../../AngledBorder';
 import Header from '../../Header';
 import Footer from '../../Footer';
 import TagList from '../../TagList';
+
 import exampleExperience from '../../../mocks/experience';
 import exampleEducation from '../../../mocks/education';
 import { isoToMonthYear } from '../../../helpers/date';
@@ -28,6 +30,7 @@ const Resume: NextPage = () => {
         <li>I&apos;m currently <em>32 years old</em>, and I live in <em>Den Haag</em>, NL with <em>my wife</em> Marleen.</li>
         </ul>
       </div>
+      <AngledBorder />
     </section>
     <main className={styles.main}>
       <section className={styles.experience}>

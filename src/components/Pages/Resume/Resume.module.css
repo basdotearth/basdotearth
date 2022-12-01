@@ -1,8 +1,19 @@
 .pageHeader {
   --header-margin: 6rem;
+  position: relative;
   margin: 0 0 2rem;
   padding: 0 0 var(--header-margin);
   background-color: rgba(var(--fg) / 5%);
+  background-attachment: local, fixed;
+}
+
+.pageHeader > svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  fill: rgb(var(--bg));
 }
 
 .headerTitle {
