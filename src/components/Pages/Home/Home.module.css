@@ -19,18 +19,6 @@
   height: calc(100% + 60px);
 }
 
-.headerTopography::after {
-  position: absolute;
-  top: calc(100% - 1.5rem);
-  left: -1rem;
-  display: block;
-  width: calc(100% + 2rem);
-  height: 5rem;
-  content: '';
-  background-color: rgb(var(--bg));
-  transform: rotate(-1deg);
-}
-
 .contentHeading {
   margin: 0 0 2rem;
   font-size: 1rem;
@@ -127,4 +115,13 @@
   color: rgb(var(--fg));
   background-color: rgba(var(--fg) / 5%);
   background-attachment: local, fixed;
+}
+
+.headerTopography > svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  fill: rgb(var(--bg));
 }
