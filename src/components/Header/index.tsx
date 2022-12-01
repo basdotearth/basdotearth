@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import Icon, { EIcons } from '../Icon/index';
 import styles from './header.module.css';
