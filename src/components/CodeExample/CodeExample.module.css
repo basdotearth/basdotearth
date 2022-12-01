@@ -1,5 +1,25 @@
+.playgroundWrapper {
+  margin: 0 0 2rem;
+}
+
 .playgroundWrapper > div > div {
-  border: 1px solid rgba(var(--fg) / 10%);
+  border: 1px solid rgb(var(--fg));
   border-radius: 0.5rem;
   overflow: hidden;
+}
+
+.playgroundWrapper div[role="tablist"] {
+  font-size: 0.8rem;
+}
+
+.playgroundWrapper button[role="tab"] {
+  padding: 0.5rem;
+}
+
+.playgroundWrapper button[data-selected] {
+  font-weight: var(--fw-bold);
+  border-left: 1px solid rgb(var(--fg));
+  border-bottom: 1px solid rgb(var(--bg));
+  border-right: 1px solid rgb(var(--fg));
+  transform: translateY(1px);
 }

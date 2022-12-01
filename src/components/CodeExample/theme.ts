@@ -11,10 +11,10 @@ const theme = {
     color: 'rgb(var(--cream))',
   },
   divider: {
-    width: 2,
-    background: 'rgba(var(--fg) / 20%)',
+    width: 0,
+    background: 'transparent',
     dividerBackground: 'transparent',
-    containerWidth: 1,
+    containerWidth: 0,
   },
   editor: {
     fontFamily: 'Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace',
@@ -24,15 +24,15 @@ const theme = {
   tabs: {
     tabHeader: {
       background: 'transparent',
-      panelBackground: 'rgba(var(--fg) / 20%)',
+      panelBackground: 'transparent',
       color: 'rgb(var(--fg))',
-      borderBottom: 'rgb(var(--fg))',
+      borderBottom: '1px solid rgb(var(--fg))',
     },
     tabPanel: {
       phoneHeight: '10em',
     },
     selectedTab: {
-      borderBottom: '2px solid rgb(var(--accent))',
+      borderBottom: 'transparent',
     },
   },
 };
