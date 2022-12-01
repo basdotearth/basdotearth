@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import { getMDXComponent } from 'mdx-bundler/client';
 
 import CodeExample from '../../CodeExample';
+import CodeSnippet from '../../CodeSnippet';
 import Head from '../../Head';
 import Header from '../../Header';
 import Footer from '../../Footer';
@@ -23,7 +24,7 @@ const SinglePost: MDXStaticPage<BlogPostMeta | PlaygroundMeta> = ({ code, meta }
     <main className={styles.main}>
       <h1 className={styles.title}>{ meta.title }</h1>
       {'abstract' in meta && <p className="lead">{ meta.abstract }</p>}
-      <BlogContent components={{ CodeExample }}/>
+      <BlogContent components={{ CodeExample, code: CodeSnippet }}/>
       {'tags' in meta && <TagList tags={meta.tags} />}
     </main>
     <Footer />
