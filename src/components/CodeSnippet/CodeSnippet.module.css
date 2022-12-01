@@ -6,8 +6,9 @@
 
 .codeSnippetLanguage {
   padding: 0.5rem;
-  font-size: 0.8rem;
   font-family: var(--font-sans);
+  font-weight: var(--fw-bold);
+  font-size: 0.8rem;
   text-transform: capitalize;
   border: 1px solid rgb(var(--fg));
   border-bottom: 1px solid rgb(var(--bg));
