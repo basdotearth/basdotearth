@@ -12,7 +12,6 @@ import styles from './BlogOverview.module.css';
 const BlogOverview: MDXOverviewPage<BlogPostMeta> = ({ items }) => {
   return <>
     <Head title="Blog" description={`${items.length} blogposts on code and other things.`} />
-
     <Header />
     <main className={styles.overview}>
       <h1 className={styles.overviewTitle}>Blogposts</h1>

@@ -19,7 +19,6 @@ const SinglePost: MDXStaticPage<BlogPostMeta | PlaygroundMeta> = ({ code, meta }
 
   return <>
     <Head title={meta.title} description={meta.seoTitle} />
-
     <Header />
     <main className={styles.main}>
       <h1 className={styles.title}>{ meta.title }</h1>
