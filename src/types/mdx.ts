@@ -19,6 +19,10 @@ export type CollectedResult<Meta> = {
 };
 export type ErrorResult = { errorCode: 404 | 500 };
 
+export type CombinedResult<Meta extends Record<string, unknown>, withError = true> = {
+  [I in keyof Meta]: withError extends true ? CollectedResult<Meta[I]> | ErrorResult : CollectedResult<Meta[I]>;
+};
+
 export type MDXStaticPage<Meta> = NextPage<PageTypeContent<Meta>>;
 export type MDXOverviewPage<Meta> = NextPage<CollectedResult<Meta>>;
 export type MDXStaticPageProps<Meta> = GetStaticProps<PageTypeContent<Meta> | ErrorResult, PageTypeSlug>;
@@ -28,3 +32,4 @@ export type MDXStaticPaths = GetStaticPaths<PageTypeSlug>;
 export type MDXCombinedPageProps<Meta extends Record<string, unknown>> = GetStaticProps<
   { [I in keyof Meta]: CollectedResult<Meta[I]> } | ErrorResult
 >;
+export type MDXCombinedPage<Meta extends Record<string, unknown>> = NextPage<CombinedResult<Meta, false>>;

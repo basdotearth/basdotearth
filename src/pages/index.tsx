@@ -1,11 +1,10 @@
 import Home from '../components/Pages/Home';
+import type { HomeProps } from '../components/Pages/Home';
 
 import { collectStaticContent } from '../helpers/mdx';
 import { resolvePromisesObject } from '../helpers/promises';
 import type { BlogPostMeta, PlaygroundMeta } from '../types';
-import type { CollectedResult, ErrorResult, MDXCombinedPageProps } from '../types/mdx';
-
-type HomeProps = { posts: BlogPostMeta, playground: PlaygroundMeta };
+import type { CombinedResult, ErrorResult, MDXCombinedPageProps } from '../types/mdx';
 
 export const getStaticProps: MDXCombinedPageProps<HomeProps> = async () => {
   const results = await resolvePromisesObject({
@@ -19,14 +18,14 @@ export const getStaticProps: MDXCombinedPageProps<HomeProps> = async () => {
       filter: (i) => i.isPublished,
       sort: (a, b) => (new Date(a.publishedOn)).valueOf() - (new Date(b.publishedOn)).valueOf(),
     }),
-  }) as { posts: CollectedResult<BlogPostMeta> | ErrorResult, playground: CollectedResult<PlaygroundMeta> | ErrorResult };
+  }) as CombinedResult<HomeProps, true>;
 
   const error = Object.values(results).find(result => 'errorCode' in result);
   if (error !== undefined) {
     return { props: error as ErrorResult };
   }
 
-  return { props: results as { posts: CollectedResult<BlogPostMeta>, playground: CollectedResult<PlaygroundMeta> } };
+  return { props: results as CombinedResult<HomeProps, false> };
 };
 
 export default Home;
