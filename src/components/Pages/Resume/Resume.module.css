@@ -3,6 +3,7 @@
   position: relative;
   margin: 0 0 2rem;
   padding: 0 0 var(--header-margin);
+  flex: 1;
   background-color: rgba(var(--fg) / 5%);
   background-attachment: local, fixed;
 }

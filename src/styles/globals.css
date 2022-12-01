@@ -31,6 +31,13 @@ html, body {
   font-weight: var(--fw-regular);
   color: rgb(var(--fg));
   background: rgb(var(--bg));
+  overscroll-behavior-y: none;
+}
+
+body > div {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 bold, strong {

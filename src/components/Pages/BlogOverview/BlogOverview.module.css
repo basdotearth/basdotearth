@@ -1,8 +1,9 @@
 .overview {
   display: grid;
-  margin: 6rem auto 0;
   width: 100%;
   max-width: var(--width-lg);
+  margin: 6rem auto 0;
+  flex: 1;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 3rem;
 }
