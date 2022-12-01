@@ -24,3 +24,7 @@ export type MDXOverviewPage<Meta> = NextPage<CollectedResult<Meta>>;
 export type MDXStaticPageProps<Meta> = GetStaticProps<PageTypeContent<Meta> | ErrorResult, PageTypeSlug>;
 export type MDXOverviewPageProps<Meta> = GetStaticProps<CollectedResult<Meta> | ErrorResult, PageTypeSlug>;
 export type MDXStaticPaths = GetStaticPaths<PageTypeSlug>;
+
+export type MDXCombinedPageProps<Meta extends Record<string, unknown>> = GetStaticProps<
+  { [I in keyof Meta]: CollectedResult<Meta[I]> } | ErrorResult
+>;
