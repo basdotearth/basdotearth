@@ -1,19 +1,12 @@
-export type TPlaygroundItem = {
-  title: string;
-  tags: string[];
-  link: string;
-};
-
-export type TExperience = {
+export type ExperienceMeta = {
   start: string;
   end?: string;
   company: string;
-  description: string;
   location: string;
   tags: string[];
 };
 
-export type TEducation = {
+export type EducationMeta = {
   title: string;
   byline?: string;
   start: string;

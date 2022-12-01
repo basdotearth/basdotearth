@@ -1,18 +1,18 @@
-import type { NextPage } from 'next';
-
 import AngledBorder from '../../AngledBorder';
 import Head from '../../Head';
 import Header from '../../Header';
 import Footer from '../../Footer';
 import TagList from '../../TagList';
 
-import exampleExperience from '../../../mocks/experience';
-import exampleEducation from '../../../mocks/education';
 import { isoToMonthYear } from '../../../helpers/date';
+import type { MDXCombinedPage } from '../../../types/mdx';
+import type { EducationMeta, ExperienceMeta } from '../../../types';
 
 import styles from './Resume.module.css';
 
-const Resume: NextPage = () => {
+export type ResumeProps = { experience: ExperienceMeta, education: EducationMeta };
+
+const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
   return <>
     <Head title="Resume" description="Frontend Developer and part-time Scrum Master" />
     <section className={[styles.pageHeader, 'fillSVG'].join(' ')}>
@@ -33,7 +33,7 @@ const Resume: NextPage = () => {
     <main className={styles.main}>
       <section className={styles.experience}>
         <h3 className={styles.sectionTitle}>Experience</h3>
-        { exampleExperience.map((exp, index) => (
+        { experience.items.map((exp, index) => (
           <div className={styles.experienceItem} key={`item--${index}`}>
             <div className={styles.experienceHeader}>
               <h2 className={styles.experienceTitle}>{exp.company}</h2>
@@ -42,7 +42,10 @@ const Resume: NextPage = () => {
                 {exp.end && ` - ${isoToMonthYear(exp.end)}`}
               </p>
             </div>
-            <p className={styles.experienceDescription}>{exp.description}</p>
+            <p
+              className={styles.experienceDescription}
+              dangerouslySetInnerHTML={{__html: exp.excerpt}}>
+            </p>
             <TagList tags={exp.tags} />
           </div>
         )) }
@@ -50,7 +53,7 @@ const Resume: NextPage = () => {
       </section>
       <section className={styles.education}>
         <h3 className={styles.sectionTitle}>Education</h3>
-        { exampleEducation.map((item, index) => (
+        { education.items.map((item, index) => (
           <div className={styles.educationItem} key={`item--${index}`}>
             <h2 className={styles.educationTitle}>{item.title}</h2>
             <p className={styles.educationByline}>{item.start}{item.end && ` - ${item.end}`}</p>
