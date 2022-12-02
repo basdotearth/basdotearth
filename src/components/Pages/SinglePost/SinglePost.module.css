@@ -18,10 +18,14 @@
 }
 
 .published {
-  margin: 0 0 6rem;
+  margin: 0;
   color: rgba(var(--fg) / 40%);
   font-size: 1rem;
   text-align: center;
+}
+
+.timestamps {
+  margin: 0 0 6rem;
 }
 
 .title a {
