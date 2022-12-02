@@ -20,4 +20,4 @@ const updatePublishInfo = async () => {
   }
 };
 
-await updatePublishInfo();
+(async () =>  await updatePublishInfo())();
