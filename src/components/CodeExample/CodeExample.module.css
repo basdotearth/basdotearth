@@ -2,6 +2,19 @@
   margin: 0 0 2rem;
 }
 
+.playgroundWrapper::before {
+  display: block;
+  margin: 0 0 1rem;
+  padding: 1rem;
+  line-height: 1.15;
+  text-align: center;
+  color: rgb(var(--fg));
+  background-color: rgba(var(--fg) / 20%);
+  border-radius: 0.5rem;
+  content: 'Warning: \a Code examples are not optimized for mobile viewing. Please use a device with a larger viewport.';
+  white-space: pre-wrap;
+}
+
 .playgroundWrapper > div > div {
   border: 1px solid rgb(var(--fg));
   border-radius: 0.5rem;
@@ -22,4 +35,10 @@
   border-bottom: 1px solid rgb(var(--bg));
   border-right: 1px solid rgb(var(--fg));
   transform: translateY(1px);
+}
+
+@media screen and (min-width: 40rem) {
+  .playgroundWrapper::before {
+    display: none;
+  }
 }

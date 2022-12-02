@@ -54,6 +54,7 @@
   flex: 1;
   display: flex;
   margin: 0 auto;
+  padding: 0 1rem;
   width: 100%;
   max-width: var(--width-lg);
   flex-direction: column;
@@ -64,9 +65,10 @@
 .main {
   display: grid;
   margin: 0 auto;
+  padding: 0 1rem;
   width: 100%;
   max-width: var(--width-lg);
-  grid-template-columns: 2.5fr 1fr;
+  grid-template-columns: 1fr;
   column-gap: 3rem;
 }
 
@@ -138,4 +140,10 @@
 
 .hobbies {
   grid-column: 1 / -1;
+}
+
+@media screen and (min-width: 40rem) {
+  .main {
+    grid-template-columns: 2.5fr 1fr;
+  }
 }

@@ -13,15 +13,18 @@
 
 .innerWrapper {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   width: 100%;
   max-width: var(--width-lg);
   margin: 0 auto;
-  padding: 1rem 0;
+  padding: 1rem;
   line-height: var(--brand-size);
 }
 
 .brand {
-  margin: 0 calc(2 * var(--link-spacing)) 0 0;
+  margin: 0 0 1rem;
   font-size: var(--brand-size);
   font-weight: var(--fw-bold);
   background: var(--gradient);
@@ -31,7 +34,7 @@
 }
 
 .textNav {
-  flex: 1;
+  margin: 0 0 1rem 0;
   line-height: 1.7rem;
 }
 
@@ -39,6 +42,10 @@
   margin: 0 var(--link-spacing) 0 0;
   letter-spacing: 0.5px;
   color: inherit;
+}
+
+.textNav a:last-of-type {
+  margin-right: 0;
 }
 
 .iconNav {
@@ -50,4 +57,21 @@
   margin: 0 1rem 0 0;
   padding: 0;
   border: none;
+}
+
+@media screen and (min-width: 40rem) {
+  .innerWrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: start;
+  }
+
+  .brand {
+    margin: 0 calc(2 * var(--link-spacing)) 0 0;
+  }
+
+  .textNav {
+    flex: 1;
+    margin: 0;
+  }
 }

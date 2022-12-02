@@ -1,5 +1,6 @@
 .taglist {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .tag {

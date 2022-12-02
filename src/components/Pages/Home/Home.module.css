@@ -1,22 +1,18 @@
 .main {
   position: relative;
-  padding: 3rem 0 0;
+  padding: 3rem 1rem 0;
   flex: 1;
   display: grid;
   margin: 0 auto;
   width: 100%;
   max-width: var(--width-lg);
-  grid-template-columns: 2.5fr 1fr;
+  grid-template-columns: 1fr;
   column-gap: 3rem;
 }
 
 .sidebar {
   position: sticky;
   top: 1.25rem;
-}
-
-.headerWrapper {
-  height: calc(100% + 60px);
 }
 
 .contentHeading {
@@ -109,9 +105,9 @@
 
 .headerTopography {
   position: relative;
-  height: 20rem;
-  padding: 5rem 0 0;
+  height: 12rem;
   margin: 0 0 3rem;
+  padding: 1rem 0 0;
   color: rgb(var(--fg));
   background-color: rgba(var(--fg) / 5%);
   background-attachment: local, fixed;
@@ -124,4 +120,19 @@
   width: 100%;
   height: auto;
   fill: rgb(var(--bg));
+}
+
+@media screen and (min-width: 40rem) {
+  .main {
+    grid-template-columns: 2.5fr 1fr;
+  }
+
+  .headerWrapper {
+    height: calc(100% + 60px);
+  }
+
+  .headerTopography {
+    height: 20rem;
+    padding: 5rem 0 0;
+  }
 }
