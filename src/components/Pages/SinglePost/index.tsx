@@ -19,15 +19,22 @@ const SinglePost: MDXStaticPage<BlogPostMeta | PlaygroundMeta> = ({ code, meta }
   const timestamp = useMemo(() => {
     const date = new Date(meta.publishedOn);
     const tz: [string, { timeZone: string }] = ['nl-NL', { timeZone: 'CET' }];
-    return `${date.toLocaleDateString(...tz)} @ ${date.toLocaleTimeString(...tz)}`;
-  }, [meta.publishedOn]);
+    const output = ['published', date.toLocaleDateString(...tz), '@', date.toLocaleTimeString(...tz)];
+
+    if (meta.updatedOn) {
+      const update = new Date(meta.updatedOn);
+      output.push('&', 'last updated', update.toLocaleDateString(...tz), '@', update.toLocaleTimeString(...tz));
+    }
+
+    return output.join(' ');
+  }, [meta.publishedOn, meta.updatedOn]);
 
   return <>
     <Head title={meta.title} description={meta.seoTitle} />
     <Header />
     <main className={styles.main}>
       <h1 className={styles.title}>{ meta.title }</h1>
-      <p className={styles.published}>published { timestamp }</p>
+      <p className={styles.published}>{ timestamp }</p>
       {'abstract' in meta && <p className="lead">{ meta.abstract }</p>}
       <BlogContent components={{ CodeExample, code: CodeSnippet }}/>
       {'tags' in meta && <TagList tags={meta.tags} />}

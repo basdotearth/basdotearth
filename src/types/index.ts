@@ -19,6 +19,7 @@ export type BlogPostMeta = {
   abstract: string;
   isPublished: boolean;
   publishedOn: Date;
+  updatedOn?: Date;
 };
 
 export type PlaygroundMeta = {
@@ -27,4 +28,5 @@ export type PlaygroundMeta = {
   tags: string[];
   isPublished: boolean;
   publishedOn: Date;
+  updatedOn?: Date;
 };
