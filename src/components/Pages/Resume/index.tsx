@@ -63,8 +63,9 @@ const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
       </section>
       <section className={styles.hobbies}>
         <h3 className={styles.sectionTitle}>Hobbies & Personal Life</h3>
-        <p>I like to tinker with IoT devices and (TS-)Node, and sometimes I even combine those. I work to improve myself and my colleagues, and to earn the money I spend travelling Europe and the world.</p>
-        <p>Cool things I did include backpacking in Eastern Australia with one 35-liter backpack, and a year of working in Hungary. I&apos;ve learned to make the most out of the least amount of stuff, and I try to keep my possessions to a minimum. I still enjoy my books and vinyl records, and I&apos;m a sucker for dark beer and a good board game.</p>
+        <p>I like to tinker with IoT devices and (TS-)Node, and sometimes I even manage to combine them. I work to improve myself and my colleagues, and to earn the money I spend travelling Europe and the world.</p>
+        <p>Fun memories include backpacking in Australia with a small 35-liter backpack, and a year of working in Hungary. I&apos;ve learned to make the most out of the least amount of stuff, and I try to keep my possessions to a minimum. (I keep failing with books and records...)</p>
+        <p>I&apos;m a sucker for dark beer and a good board game.</p>
       </section>
     </main>
     <Footer />

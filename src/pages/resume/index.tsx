@@ -10,11 +10,11 @@ export const getStaticProps: MDXCombinedPageProps<ResumeProps> = async () => {
   const results = await resolvePromisesObject({
     experience: collectStaticContent<ExperienceMeta>({
       type: 'resumeExperience',
-      sort: (a, b) => (new Date(a.start)).valueOf() - (new Date(b.start)).valueOf(),
+      sort: (a, b) => (new Date(b.start)).valueOf() - (new Date(a.start)).valueOf(),
     }),
     education: collectStaticContent<EducationMeta>({
       type: 'resumeEducation',
-      sort: (a, b) => (new Date(a.start)).valueOf() - (new Date(b.start)).valueOf(),
+      sort: (a, b) => (new Date(b.start)).valueOf() - (new Date(a.start)).valueOf(),
     }),
   }) as CombinedResult<ResumeProps, true>;
 

@@ -1,6 +1,5 @@
 ---
 start: '2022-04-01'
-end: '2022-12-01'
 company: viaBovag.nl
 location: Bunnik, NL
 tags:
