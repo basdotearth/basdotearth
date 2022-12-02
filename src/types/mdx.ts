@@ -28,7 +28,7 @@ export type MDXStaticPage<Meta> = NextPage<PageTypeContent<Meta>>;
 export type MDXOverviewPage<Meta> = NextPage<CollectedResult<Meta>>;
 export type MDXStaticPageProps<Meta> = GetStaticProps<PageTypeContent<Meta> | ErrorResult, PageTypeMeta>;
 export type MDXOverviewPageProps<Meta> = GetStaticProps<CollectedResult<Meta> | ErrorResult, PageTypeMeta>;
-export type MDXStaticPaths = GetStaticPaths<PageTypeMeta>;
+export type MDXStaticPaths = GetStaticPaths<Omit<PageTypeMeta, 'excerpt'>>;
 
 export type MDXCombinedPageProps<Meta extends Record<string, unknown>> = GetStaticProps<
   { [I in keyof Meta]: CollectedResult<Meta[I]> } | ErrorResult
