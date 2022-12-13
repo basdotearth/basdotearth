@@ -1,0 +1,63 @@
+---
+title: Classes Helper
+seoTitle: A function I use in many React and NextJS projects
+tags:
+  - React
+  - JS
+  - Utility
+isPublished: true
+publishedOn: '2022-12-05T07:45:00+0100'
+updatedOn: '2022-12-13T13:55:40.333Z'
+---
+As a developer I tend to lean more towards standards over implementation. I am really not that bothered if something takes 2ms longer to compile or even execute if it means that most developers will be able to read and understand the code in the future. For the same reason I prefer tools like LitElement over React. While React is definitely the industry standard at this point, they make a point of "being clever" instead of being transparent.
+
+One thing that both Lit and React have in common however, is that they both require you to pass a string for CSS classes. There are a million packages on npm that will help you with this specific issue, but why install, update and maintain dependencies for something you can write yourself in 10 minutes? In most projects, I find myself crossing a point where the `.join(' ')`s become cumbersome and I whip up a variation on the following:
+
+```typescript
+export const classes = (input: string | string[] | Record<string, boolean>): string => {
+  if (Array.isArray(input)) {
+    return input.join(' ');
+  }
+
+  if (typeof input === 'object') {
+    return Object.entries(input)
+      .filter(([_key, value]) => !!value)
+      .map(([key]) => key)
+      .join(' ');
+  }
+
+  return input;
+};
+```
+
+This then allows you to do the following in your components:
+
+```jsx
+<div
+  className={classes({
+    [styles.example]: true,
+    [styles.active]: active,
+    globalStyle: someCheck && theOtherCheck > 5 && !thisCheck,
+  })}
+>
+  Hello World!
+</div>
+```
+
+The type of implementation in a LitElement could look something like:
+
+```javascript
+get wrapperClasses() {
+  return classes({
+    example: true,
+    active: this.active,
+    globalStyle: this.someCheck && this.theOtherCheck > 5 && !this.thisCheck,
+  });
+}
+
+render() {
+  return `<div class="${this.wrapperClasses()}">Hello World!</div>`;
+}
+```
+
+I regularly update this function when I (or more often one of my team-mates) think of something smart to check or fix.
