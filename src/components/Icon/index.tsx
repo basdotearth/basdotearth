@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 const RSSIcon: FC<{}> = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

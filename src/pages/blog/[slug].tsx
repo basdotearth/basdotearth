@@ -1,7 +1,7 @@
-import SinglePost from '../../components/Pages/SinglePost';
-import type { BlogPostMeta } from '../../types';
-import type { MDXStaticPaths, MDXStaticPageProps } from '../../types/mdx';
-import { getStaticContentBySlug, collectStaticContentSlugs } from '../../helpers/mdx';
+import SinglePost from 'components/Pages/SinglePost';
+import type { BlogPostMeta } from 'types/index';
+import type { MDXStaticPaths, MDXStaticPageProps } from 'types/mdx';
+import { getStaticContentBySlug, collectStaticContentSlugs } from 'helpers/mdx';
 
 export const getStaticPaths: MDXStaticPaths = async () => {
   const slugs = await collectStaticContentSlugs('posts');

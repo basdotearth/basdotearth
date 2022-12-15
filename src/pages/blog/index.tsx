@@ -1,8 +1,8 @@
-import BlogOverview from '../../components/Pages/BlogOverview';
+import BlogOverview from 'components/Pages/BlogOverview';
 
-import { collectStaticContent } from '../../helpers/mdx';
-import type { BlogPostMeta } from '../../types';
-import type { MDXOverviewPageProps } from '../../types/mdx';
+import { collectStaticContent } from 'helpers/mdx';
+import type { BlogPostMeta } from 'types/index';
+import type { MDXOverviewPageProps } from 'types/mdx';
 
 export const getStaticProps: MDXOverviewPageProps<BlogPostMeta> = async () => {
 

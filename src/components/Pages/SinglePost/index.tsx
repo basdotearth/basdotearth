@@ -3,15 +3,15 @@ import type { FC } from 'react';
 
 import { getMDXComponent } from 'mdx-bundler/client';
 
-import CodeExample from '../../CodeExample';
-import CodeSnippet from '../../CodeSnippet';
-import Head from '../../Head';
-import Header from '../../Header';
-import Footer from '../../Footer';
-import TagList from '../../TagList';
+import CodeExample from 'components/CodeExample';
+import CodeSnippet from 'components/CodeSnippet';
+import Head from 'components/Head';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+import TagList from 'components/TagList';
 
-import type { BlogPostMeta, PlaygroundMeta } from '../../../types';
-import type { MDXStaticPage } from '../../../types/mdx';
+import type { BlogPostMeta, PlaygroundMeta } from 'types/index';
+import type { MDXStaticPage } from 'types/mdx';
 
 import styles from './SinglePost.module.css';
 

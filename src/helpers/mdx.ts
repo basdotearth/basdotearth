@@ -11,7 +11,7 @@ import type {
   ContentSort,
   ErrorResult,
   PageTypeContent,
-} from '../types/mdx';
+} from 'types/mdx';
 
 type staticContent = 'posts' | 'playground' | 'resumeText' | 'resumeExperience' | 'resumeEducation';
 

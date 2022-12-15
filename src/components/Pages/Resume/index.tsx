@@ -1,12 +1,12 @@
-import AngledBorder from '../../AngledBorder';
-import Head from '../../Head';
-import Header from '../../Header';
-import Footer from '../../Footer';
-import TagList from '../../TagList';
+import AngledBorder from 'components/AngledBorder';
+import Head from 'components/Head';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+import TagList from 'components/TagList';
 
-import { isoToMonthYear } from '../../../helpers/date';
-import type { MDXCombinedPage } from '../../../types/mdx';
-import type { EducationMeta, ExperienceMeta } from '../../../types';
+import { isoToMonthYear } from 'helpers/date';
+import type { MDXCombinedPage } from 'types/mdx';
+import type { EducationMeta, ExperienceMeta } from 'types/index';
 
 import styles from './Resume.module.css';
 

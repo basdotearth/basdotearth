@@ -1,6 +1,6 @@
 import type { DetailedHTMLProps, FC, HTMLAttributes, ReactElement } from 'react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import { classes } from '../../helpers/classes';
+import { classes } from 'helpers/classes';
 
 import styles from './CodeSnippet.module.css';
 

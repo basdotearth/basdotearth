@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import Icon, { EIcons } from '../Icon';
+import Icon, { EIcons } from 'components/Icon';
 
 import styles from './TagList.module.css';
 

@@ -1,10 +1,10 @@
-import Home from '../components/Pages/Home';
-import type { HomeProps } from '../components/Pages/Home';
+import Home from 'components/Pages/Home';
+import type { HomeProps } from 'components/Pages/Home';
 
-import { collectStaticContent } from '../helpers/mdx';
-import { resolvePromisesObject } from '../helpers/promises';
-import type { BlogPostMeta, PlaygroundMeta } from '../types';
-import type { CombinedResult, ErrorResult, MDXCombinedPageProps } from '../types/mdx';
+import { collectStaticContent } from 'helpers/mdx';
+import { resolvePromisesObject } from 'helpers/promises';
+import type { BlogPostMeta, PlaygroundMeta } from 'types/index';
+import type { CombinedResult, ErrorResult, MDXCombinedPageProps } from 'types/mdx';
 
 export const getStaticProps: MDXCombinedPageProps<HomeProps> = async () => {
   const results = await resolvePromisesObject({
