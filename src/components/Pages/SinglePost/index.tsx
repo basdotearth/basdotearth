@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import type { FC } from 'react';
 
 import { getMDXComponent } from 'mdx-bundler/client';
 
@@ -14,26 +15,28 @@ import type { MDXStaticPage } from '../../../types/mdx';
 
 import styles from './SinglePost.module.css';
 
+interface TimestampProps {
+  publishedOn: Date;
+  updatedOn?: Date;
+}
+
+const Timestamp: FC<TimestampProps> = ({ publishedOn, updatedOn }) => {
+  const date = new Date(publishedOn);
+  const tz: [string, { timeZone: string }] = ['nl-NL', { timeZone: 'CET' }];
+  const update = updatedOn ? new Date(updatedOn) : null;
+  return <>
+    <p className={styles.published} key="published">
+      Published {date.toLocaleDateString(...tz)} @ {date.toLocaleTimeString(...tz)}
+    </p>
+
+    { update && <p className={styles.published} key="updated">
+      Last updated {update.toLocaleDateString(...tz)} @ {update.toLocaleTimeString(...tz)}
+    </p> }
+  </>;
+};
+
 const SinglePost: MDXStaticPage<BlogPostMeta | PlaygroundMeta> = ({ code, meta }) => {
   const BlogContent = useMemo(() => getMDXComponent(code), [code]);
-  const timestamp = useMemo(() => {
-    const date = new Date(meta.publishedOn);
-    const tz: [string, { timeZone: string }] = ['nl-NL', { timeZone: 'CET' }];
-    const output = [
-      <p className={styles.published} key="published">
-        Published {date.toLocaleDateString(...tz)} @ {date.toLocaleTimeString(...tz)}
-      </p>
-    ];
-
-    if (meta.updatedOn) {
-      const update = new Date(meta.updatedOn);
-      output.push(<p className={styles.published} key="updated">
-        Last updated {update.toLocaleDateString(...tz)} @ {update.toLocaleTimeString(...tz)}
-      </p>);
-    }
-
-    return output;
-  }, [meta.publishedOn, meta.updatedOn]);
 
   return <>
     <Head title={meta.title} description={meta.seoTitle} />
@@ -41,7 +44,7 @@ const SinglePost: MDXStaticPage<BlogPostMeta | PlaygroundMeta> = ({ code, meta }
     <main className={styles.main}>
       <h1 className={styles.title}>{ meta.title }</h1>
       <div className={styles.timestamps}>
-        { timestamp }
+       <Timestamp {...meta} />
       </div>
       {'abstract' in meta && <p className="lead">{ meta.abstract }</p>}
       <BlogContent components={{ CodeExample, pre: CodeSnippet }}/>
