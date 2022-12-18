@@ -1,11 +1,10 @@
 import AngledBorder from 'components/AngledBorder';
+import Footer from 'components/Footer';
 import Head from 'components/Head';
 import Header from 'components/Header';
-import Footer from 'components/Footer';
-import TagList from 'components/TagList';
-
-import { isoToMonthYear } from 'helpers/date';
 import type { MDXCombinedPage } from 'types/mdx';
+import TagList from 'components/TagList';
+import { isoToMonthYear } from 'helpers/date';
 import type { EducationMeta, ExperienceMeta } from 'types/index';
 
 import styles from './Resume.module.css';
@@ -21,11 +20,22 @@ const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
         <h1 className={styles.headerTitle}>Hello, my name is Bas.</h1>
         <h2 className={styles.headerSupport}>I am a Frontend Developer and part-time Scrum Master</h2>
         <ul className={styles.lead}>
-        <li>I&apos;m a developer on a mission, with a passion for <em>post-rock</em>, <em>good books</em> and <em>great beer</em>.</li>
-        <li>I stack <em>HTML5</em>, <em>ES6+/TS</em> and <em>CSS Vars</em> using <em>webcomponents</em> and Lit, or a framework like Vue or NextJS.</li>
-        <li>Sometimes I create <em>hybrid solutions</em> with React Native or Electron.</li>
-        <li>I&apos;m a strong proponent of <em>Agile development</em> and work as a Scrum Master to help my team reach their goals.</li>
-        <li>I&apos;m currently <em>32 years old</em>, and I live in <em>Gouda</em>, NL with <em>my wife</em> Marleen.</li>
+          <li>
+            I&apos;m a developer on a mission, with a passion for <em>post-rock</em>,
+            <em>good books</em> and <em>great beer</em>.
+          </li>
+          <li>
+            I stack <em>HTML5</em>, <em>ES6+/TS</em> and <em>CSS Vars</em> using <em>webcomponents</em> and Lit,
+            or a framework like Vue or NextJS.
+          </li>
+          <li>Sometimes I create <em>hybrid solutions</em> with React Native or Electron.</li>
+          <li>
+            I&apos;m a strong proponent of <em>Agile development</em>
+            and work as a Scrum Master to help my team reach their goals.
+          </li>
+          <li>
+            I&apos;m currently <em>32 years old</em>, and I live in <em>Gouda</em>, NL with <em>my wife</em> Marleen.
+          </li>
         </ul>
       </div>
       <AngledBorder />
@@ -44,7 +54,8 @@ const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
             </div>
             <p
               className={styles.experienceDescription}
-              dangerouslySetInnerHTML={{__html: exp.excerpt}}>
+              dangerouslySetInnerHTML={{ __html: exp.excerpt }}
+            >
             </p>
             <TagList tags={exp.tags} />
           </div>
@@ -63,8 +74,15 @@ const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
       </section>
       <section className={styles.hobbies}>
         <h3 className={styles.sectionTitle}>Hobbies & Personal Life</h3>
-        <p>I like to tinker with IoT devices and (TS-)Node, and sometimes I even manage to combine them. I work to improve myself and my colleagues, and to earn the money I spend travelling Europe and the world.</p>
-        <p>Fun memories include backpacking in Australia with a small 35-liter backpack, and a year of working in Hungary. I&apos;ve learned to make the most out of the least amount of stuff, and I try to keep my possessions to a minimum. (I keep failing with books and records...)</p>
+        <p>
+          I like to tinker with IoT devices and (TS-)Node, and sometimes I even manage to combine them.
+          I work to improve myself and my colleagues, and to earn the money I spend travelling Europe and the world.
+        </p>
+        <p>
+          Fun memories include backpacking in Australia with a small 35-liter backpack,
+          and a year of working in Hungary. I&apos;ve learned to make the most out of the least amount of stuff,
+          and I try to keep my possessions to a minimum. (I keep failing with books and records...)
+        </p>
         <p>I&apos;m a sucker for dark beer and a good board game.</p>
       </section>
     </main>

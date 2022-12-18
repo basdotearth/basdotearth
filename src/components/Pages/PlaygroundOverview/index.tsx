@@ -1,12 +1,11 @@
 import Link from 'next/link';
 
+import Footer from 'components/Footer';
 import Head from 'components/Head';
 import Header from 'components/Header';
-import Footer from 'components/Footer';
-import TagList from 'components/TagList';
-
-import type { PlaygroundMeta } from 'types/index';
 import type { MDXOverviewPage } from 'types/mdx';
+import type { PlaygroundMeta } from 'types/index';
+import TagList from 'components/TagList';
 
 import styles from './PlaygroundOverview.module.css';
 

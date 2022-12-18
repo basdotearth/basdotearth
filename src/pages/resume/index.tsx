@@ -1,10 +1,9 @@
 import Resume from 'components/Pages/Resume';
 import type { ResumeProps } from 'components/Pages/Resume';
-
 import { collectStaticContent } from 'helpers/mdx';
 import { resolvePromisesObject } from 'helpers/promises';
-import type { EducationMeta, ExperienceMeta } from 'types/index';
 import type { CombinedResult, ErrorResult, MDXCombinedPageProps } from 'types/mdx';
+import type { EducationMeta, ExperienceMeta } from 'types/index';
 
 export const getStaticProps: MDXCombinedPageProps<ResumeProps> = async () => {
   const results = await resolvePromisesObject({

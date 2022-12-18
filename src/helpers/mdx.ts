@@ -2,7 +2,7 @@ import { bundleMDX } from 'mdx-bundler';
 import { cwd } from 'process';
 import { join } from 'path';
 import matter from 'gray-matter';
-import { readdir, readFile } from 'fs/promises';
+import { readFile, readdir } from 'fs/promises';
 
 import type {
   CollectedItem,
@@ -38,7 +38,7 @@ interface CollectStaticContentProps<Meta> {
   type: staticContent,
   filter?: ContentFilter<Meta>,
   sort?: ContentSort<Meta>,
-};
+}
 
 export const collectStaticContent = async <Meta>({
   type,
@@ -49,7 +49,7 @@ export const collectStaticContent = async <Meta>({
     const files = await collectStaticContentFiles(type);
     const items: CollectedItem<Meta>[] = [];
 
-    for (let file of files) {
+    for (const file of files) {
       const path = join(staticContentPaths[type], file);
       const rawFile = await readFile(path);
       const content = matter(rawFile.toString(), { excerpt: true });
@@ -63,7 +63,7 @@ export const collectStaticContent = async <Meta>({
     }
 
     const defaultFilter = (item: CollectedItem<Meta>) => item;
-    const defaultSort = (a: CollectedItem<Meta>, b: CollectedItem<Meta>) => 1;
+    const defaultSort = (_a: CollectedItem<Meta>, _b: CollectedItem<Meta>) => 1;
 
     return {
       items: items
@@ -85,7 +85,7 @@ export const getStaticContentBySlug = async <Meta>({
   type,
 }: GetStaticContentBySlugParams): Promise<PageTypeContent<Meta> | ErrorResult> => {
   const dirContents = await readdir(staticContentPaths[type]);
-  const file = dirContents.find(file => new RegExp(`^${slug}.mdx?$`).test(file));
+  const file = dirContents.find(item => new RegExp(`^${slug}.mdx?$`).test(item));
 
   if (file) {
     try {

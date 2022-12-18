@@ -1,8 +1,7 @@
-import PlaygroundOverview from 'components/Pages/PlaygroundOverview';
-
-import { collectStaticContent } from 'helpers/mdx';
-import type { PlaygroundMeta } from 'types/index';
 import type { MDXOverviewPageProps } from 'types/mdx';
+import type { PlaygroundMeta } from 'types/index';
+import PlaygroundOverview from 'components/Pages/PlaygroundOverview';
+import { collectStaticContent } from 'helpers/mdx';
 
 export const getStaticProps: MDXOverviewPageProps<PlaygroundMeta> = async () => {
   return {

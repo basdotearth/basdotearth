@@ -1,9 +1,10 @@
 import type { FC } from 'react';
-import PlaygroundComponent from '@agney/playground';
-import '@reach/tabs/styles.css';
 
-import theme from './theme';
+import '@reach/tabs/styles.css';
+import PlaygroundComponent from '@agney/playground';
+
 import styles from './CodeExample.module.css';
+import theme from './theme';
 
 interface CodeExampleProps {
   id: string;

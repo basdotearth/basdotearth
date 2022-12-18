@@ -10,7 +10,7 @@ interface TagListProps {
 
 const TagList: FC<TagListProps> = ({ tags }) => (
   <div className={styles.taglist}>
-  { tags.map((tag, index) => (
+    { tags.map((tag, index) => (
       <div className={styles.tag} key={`tag--${index}`}>
         <Icon icon={EIcons.Tag} width={16} height={16} />
         {tag}

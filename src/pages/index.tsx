@@ -1,6 +1,5 @@
 import Home from 'components/Pages/Home';
 import type { HomeProps } from 'components/Pages/Home';
-
 import { collectStaticContent } from 'helpers/mdx';
 import { resolvePromisesObject } from 'helpers/promises';
 import type { BlogPostMeta, PlaygroundMeta } from 'types/index';

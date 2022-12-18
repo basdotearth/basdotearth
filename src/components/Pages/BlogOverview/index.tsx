@@ -1,10 +1,9 @@
 import Link from 'next/link';
 
+import type { BlogPostMeta } from 'types/index';
+import Footer from 'components/Footer';
 import Head from 'components/Head';
 import Header from 'components/Header';
-import Footer from 'components/Footer';
-
-import type { BlogPostMeta } from 'types/index';
 import type { MDXOverviewPage } from 'types/mdx';
 
 import styles from './BlogOverview.module.css';

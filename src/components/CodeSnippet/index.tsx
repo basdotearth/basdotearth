@@ -1,5 +1,7 @@
 import type { DetailedHTMLProps, FC, HTMLAttributes, ReactElement } from 'react';
+
 import Highlight, { defaultProps } from 'prism-react-renderer';
+
 import { classes } from 'helpers/classes';
 
 import styles from './CodeSnippet.module.css';
@@ -15,22 +17,23 @@ const CodeSnippet: FC<CodeSnippetProps> = ({ children }) => {
     <Highlight
       {...defaultProps }
       code={props.children}
+
       // @ts-ignore
       language={language}
     >
-        {({ className, tokens, getLineProps, getTokenProps }) => (
-          <pre className={classes([className, styles.codeSnippet])}>
-            {tokens.map((line, i) => (
-              <div key={`line--${i}`} {...getLineProps({ line, key: i })}>
-                {line.map((token, key) => {
-                  const props = getTokenProps({ token, key });
-                  props.style = { ...props.style, whiteSpace: 'pre-wrap' };
-                  return <span key={`token--${i}`} {...props} />;
-                })}
-              </div>
-            ))}
-          </pre>
-        )}
+      {({ className, tokens, getLineProps, getTokenProps }) => (
+        <pre className={classes([className, styles.codeSnippet])}>
+          {tokens.map((line, i) => (
+            <div key={`line--${i}`} {...getLineProps({ line, key: i })}>
+              {line.map((token, key) => {
+                const lineProps = getTokenProps({ token, key });
+                lineProps.style = { ...props.style, whiteSpace: 'pre-wrap' };
+                return <span key={`token--${i}`} {...lineProps} />;
+              })}
+            </div>
+          ))}
+        </pre>
+      )}
     </Highlight>
   </div>;
 };

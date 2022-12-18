@@ -1,9 +1,12 @@
-import Link from 'next/link';
 import type { FC } from 'react';
 
-import Icon, { EIcons } from 'components/Icon/index';
-import styles from './Header.module.css';
+import Link from 'next/link';
+
+import { classes } from 'helpers/classes';
 import useDarkMode from 'hooks/useDarkMode';
+import Icon, { EIcons } from 'components/Icon/index';
+
+import styles from './Header.module.css';
 
 interface HeaderProps {
   fillBg?: boolean;
@@ -14,8 +17,12 @@ const Header: FC<HeaderProps> = ({ fillBg = true, offset = 0 }) => {
   const [darkMode, setDarkMode] = useDarkMode();
 
   return <header
-    className={[styles.header, fillBg ? styles.headerFilled : ''].join(' ')}
-    style={{ marginTop: offset }}>
+    className={classes({
+      [styles.header]: true,
+      [styles.headerFilled]: fillBg,
+    })}
+    style={{ marginTop: offset }}
+  >
     <div className={styles.innerWrapper}>
       <div className={styles.brand}>
         <Link href="/">Bas Klinkhamer</Link>

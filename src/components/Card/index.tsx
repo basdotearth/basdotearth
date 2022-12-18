@@ -1,4 +1,5 @@
 import { type FC, type PropsWithChildren } from 'react';
+
 import Link from 'next/link';
 
 import styles from './Card.module.css';
