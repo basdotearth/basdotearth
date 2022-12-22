@@ -27,8 +27,11 @@ const CodeSnippet: FC<CodeSnippetProps> = ({ children }) => {
             <div key={`line--${i}`} {...getLineProps({ line, key: i })}>
               {line.map((token, key) => {
                 const lineProps = getTokenProps({ token, key });
-                lineProps.style = { ...props.style, whiteSpace: 'pre-wrap' };
-                return <span key={`token--${i}`} {...lineProps} />;
+                return <span
+                  key={`token--${i}`}
+                  {...lineProps}
+                  style={{ ...lineProps.style, whiteSpace: 'pre-wrap' }}
+                />;
               })}
             </div>
           ))}
