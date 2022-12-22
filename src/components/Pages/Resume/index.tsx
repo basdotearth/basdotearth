@@ -21,7 +21,7 @@ const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
         <h2 className={styles.headerSupport}>I am a Frontend Developer and part-time Scrum Master</h2>
         <ul className={styles.lead}>
           <li>
-            I&apos;m a developer on a mission, with a passion for <em>post-rock</em>,
+            I&apos;m a developer on a mission, with a passion for <em>post-rock</em>,&nbsp;
             <em>good books</em> and <em>great beer</em>.
           </li>
           <li>
@@ -30,7 +30,7 @@ const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
           </li>
           <li>Sometimes I create <em>hybrid solutions</em> with React Native or Electron.</li>
           <li>
-            I&apos;m a strong proponent of <em>Agile development</em>
+            I&apos;m a strong proponent of <em>Agile development</em>&nbsp;
             and work as a Scrum Master to help my team reach their goals.
           </li>
           <li>
