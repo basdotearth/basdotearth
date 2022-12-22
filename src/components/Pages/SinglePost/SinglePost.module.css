@@ -37,3 +37,41 @@
 .title a:active {
   text-decoration: underline;
 }
+
+.content em {
+  font-style: italic;
+}
+
+.content ul,
+.content ol {
+  margin: 0 0 1rem;
+}
+
+.content ul > li {
+  --arrow-opacity: 0.8;
+  --arrow-offset: -1.5rem;
+  --text-color: var(--fg);
+  position: relative;
+  display: block;
+  margin: 0 0 0 1.5rem;
+  color: rgb(var(--text-color));
+  transition: color var(--transition);
+}
+
+.content ul > li::before {
+  position: absolute;
+  top: calc(50% - 0.9rem);
+  left: var(--arrow-offset);
+  display: block;
+  content: '\2192';
+  color: rgb(var(--accent));
+  opacity: var(--arrow-opacity);
+  transition: opacity var(--transition), left var(--transition), right var(--transition);
+}
+
+
+.content ul > li:hover {
+  --arrow-opacity: 1;
+  --arrow-offset: -1.25rem;
+  --text-color: var(--accent);
+}

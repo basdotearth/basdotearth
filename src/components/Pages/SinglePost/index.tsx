@@ -46,7 +46,9 @@ const SinglePost: MDXStaticPage<BlogPostMeta | PlaygroundMeta> = ({ code, meta }
         <Timestamp {...meta} />
       </div>
       {'abstract' in meta && <p className="lead">{ meta.abstract }</p>}
-      <BlogContent components={{ CodeExample, pre: CodeSnippet }}/>
+      <div className={styles.content}>
+        <BlogContent components={{ CodeExample, pre: CodeSnippet }}/>
+      </div>
       {'tags' in meta && <TagList tags={meta.tags} />}
     </main>
     <Footer />
