@@ -13,7 +13,7 @@ export type ResumeProps = { experience: ExperienceMeta, education: EducationMeta
 
 const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
   return <>
-    <Head title="Resume" description="Frontend Developer and part-time Scrum Master" />
+    <Head title="Resume" description="Frontend Developer and upcoming Product Owner" />
     <section className={[styles.pageHeader, 'fillSVG'].join(' ')}>
       <Header />
       <div className={styles.headerContent}>
@@ -26,8 +26,7 @@ const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
           </li>
           <li>
             I stack <em>HTML5</em>, <em>ES6+/TS</em> and <em>CSS Vars</em> using <em>webcomponents</em> and Lit,
-            or a framework like Vue or NextJS.
-            Sometimes I create <em>hybrid solutions</em> with React Native or Electron.
+            sometimes using frameworks like NextJS or React Native.
           </li>
           <li>In 2022 I started my transition towards becoming a Product Owner.</li>
           <li>
