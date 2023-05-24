@@ -68,7 +68,10 @@ const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
         { education.items.map((item, index) => (
           <div className={styles.educationItem} key={`item--${index}`}>
             <h2 className={styles.educationTitle}>{item.title}</h2>
-            <p className={styles.educationByline}>{item.start}{item.end && ` - ${item.end}`}</p>
+            <p className={styles.educationByline}>
+              {isoToMonthYear(item.start)}
+              {item.end && ` - ${isoToMonthYear(item.end)}`}
+            </p>
             <p className={styles.educationByline}>{item.byline}</p>
           </div>
         )) }
