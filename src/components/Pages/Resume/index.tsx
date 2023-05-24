@@ -18,7 +18,7 @@ const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
       <Header />
       <div className={styles.headerContent}>
         <h1 className={styles.headerTitle}>Hello, my name is Bas.</h1>
-        <h2 className={styles.headerSupport}>I am a Frontend Developer and part-time Scrum Master</h2>
+        <h2 className={styles.headerSupport}>I am an experienced Frontend Developer and upcoming Product Owner</h2>
         <ul className={styles.lead}>
           <li>
             I&apos;m a developer on a mission, with a passion for <em>post-rock</em>,&nbsp;
@@ -27,11 +27,12 @@ const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
           <li>
             I stack <em>HTML5</em>, <em>ES6+/TS</em> and <em>CSS Vars</em> using <em>webcomponents</em> and Lit,
             or a framework like Vue or NextJS.
+            Sometimes I create <em>hybrid solutions</em> with React Native or Electron.
           </li>
-          <li>Sometimes I create <em>hybrid solutions</em> with React Native or Electron.</li>
+          <li>In 2022 I started my transition towards becoming a Product Owner.</li>
           <li>
             I&apos;m a strong proponent of <em>Agile development</em>&nbsp;
-            and work as a Scrum Master to help my team reach their goals.
+            and worked as a Scrum Master to help teams reach their goals.
           </li>
           <li>
             I&apos;m currently <em>32 years old</em>, and I live in <em>Gouda</em>, NL with <em>my wife</em> Marleen.

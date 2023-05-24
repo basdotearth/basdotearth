@@ -14,5 +14,5 @@ tags:
   - Cypress
   - Communication
 ---
-I was part of the CommonTrack Crew-team within KLM. This team develops and maintains Self-Serviced Applications for cabin crew, within the IT environment of KLM. After February 2018 I worked as Frontend Lead on a large scale internal project where the HR-related websites for 32.000 KLM colleagues were replaced by one custom designed system. Within the project I helped generate a result that improved on speed, usability and accessibility by using a combination of new techniques. Next to this I set up a new Frontend test-flow using Cypress en Atlassian Bamboo.
+At KLM I worked as Frontend Lead on a large internal project where the multiple HR-related websites used by 32.000 KLM employees were replaced by a new custom system. Within the project I helped generate a result that improved on speed, usability and accessibility by using a combination of new techniques. Next to this I set up a new Frontend test-flow using Cypress en Atlassian Bamboo.
 ---
