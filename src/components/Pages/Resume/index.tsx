@@ -26,7 +26,7 @@ const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
           </li>
           <li>
             I stack <em>HTML5</em>, <em>ES6+/TS</em> and <em>CSS Vars</em> using <em>webcomponents</em> and Lit,
-            sometimes using frameworks like NextJS or React Native.
+            or in frameworks like NextJS & React Native.
           </li>
           <li>In 2022 I started my transition towards becoming a Product Owner.</li>
           <li>
