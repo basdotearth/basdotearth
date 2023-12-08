@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { classes } from 'helpers/classes';
 import useDarkMode from 'hooks/useDarkMode';
@@ -15,6 +16,7 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = ({ fillBg = true, offset = 0 }) => {
   const [darkMode, setDarkMode] = useDarkMode();
+  const { route } = useRouter();
 
   return <header
     className={classes({
@@ -28,9 +30,21 @@ const Header: FC<HeaderProps> = ({ fillBg = true, offset = 0 }) => {
         <Link href="/">Bas Klinkhamer</Link>
       </div>
       <nav className={styles.textNav}>
-        <Link href="/blog">Blog</Link>
-        <Link href="/playground">Playground</Link>
-        <Link href="/resume">Resume</Link>
+        <Link href="/">
+          <a className={classes({ [styles.activeLink]: route === '/' })}>
+            Resume
+          </a>
+        </Link>
+        <Link href="/blog">
+          <a className={classes({ [styles.activeLink]: route.startsWith('/blog') })}>
+            Blog
+          </a>
+        </Link>
+        <Link href="/playground">
+          <a className={classes({ [styles.activeLink]: route.startsWith('/playground') })}>
+          Playground
+          </a>
+        </Link>
       </nav>
       <nav className={styles.iconNav}>
         <a onClick={() => setDarkMode(!darkMode)}>

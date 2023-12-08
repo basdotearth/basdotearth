@@ -8,32 +8,30 @@
   background-attachment: local, fixed;
 }
 
-.pageHeader > svg {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  fill: rgb(var(--bg));
-}
-
 .headerTitle {
   margin: var(--header-margin) 0 0;
-  color: currentColor;
-  font-size: 2.5rem;
+  font-size: 3rem;
+  font-family: var(--font-header);
   font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
   line-height: 1.15;
 }
 
 .headerSupport {
   margin: 0 0 3rem;
   font-size: 1.5rem;
-  font-weight: var(--fw-regular);
-  line-height: 1.15;
+  font-family: var(--font-serif);
+  font-weight: var(--fw-light);
+  font-style: italic;
+  line-height: 1.5;
+  text-transform: unset;
+  letter-spacing: unset;
 }
 
 .lead {
   --arrow-offset: 2rem;
+  font-weight: var(--fw-light);
   font-size: 1.2rem;
   line-height: 1.5;
 }
@@ -74,8 +72,12 @@
 
 .sectionTitle {
   margin: 0 0 2rem;
+  font-family: var(--font-header);
   font-size: 1rem;
+  font-weight: var(--fw-light);
+  letter-spacing: -0.5px;
   text-transform: uppercase;
+  color: rgb(var(--light-grey));
 }
 
 .experience {
@@ -96,15 +98,20 @@
 
 .experienceTitle {
   flex: 1;
+  font-family: var(--font-header);
   font-size: 1.5rem;
   line-height: 1.25;
-  font-weight: var(--fw-semibold);
-  color: currentColor;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
 }
 
 .experienceDate {
   margin: 0;
-  color: rgba(var(--fg) / 40%);
+  font-weight: var(--fw-light);
+  font-size: 0.75rem;
+  color: rgb(var(--light-grey));
+  letter-spacing: -0.5px;
+  text-transform: lowercase;
 }
 
 .experienceDescription {
@@ -119,18 +126,20 @@
 .educationItem {
   margin: 0 0 1.5rem;
   padding: 1rem;
-  border: 1px solid rgba(var(--fg) / 40%);
-  border-radius: 0.5rem;
   transition: border var(--transition);
+}
+
+.educationItem:hover {
+  border-color: rgb(var(--accent));
 }
 
 .educationTitle {
   margin: 0 0 0.5rem;
   font-size: 1rem;
   line-height: 1.25;
-  font-weight: var(--fw-semibold);
-  color: rgb(var(--title-color));
-  transition: color var(--transition);
+  font-family: var(--font-header);
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
 }
 
 .educationByline {

@@ -1,25 +1,6 @@
 import { Head, Html, Main, NextScript } from 'next/document';
 
-type TFontDefinition = {
-  name: string;
-  weights: number[],
-};
-
-const generateGoogleUrl = (fonts: TFontDefinition[]): string => {
-  const requested = fonts
-    .map(font => `family=${font.name.replace(/\s/g, '+')}:wght@${font.weights.join(';')}`)
-    .join('&');
-  return `https://fonts.googleapis.com/css2?${requested}&display=swap`;
-};
-
 const Document = () => {
-  const fonts: TFontDefinition[] = [{
-    name: 'Palanquin',
-    weights: [300, 400, 700],
-  }, {
-    name: 'Fira Code',
-    weights: [400, 600],
-  }];
 
   return <Html>
     <Head>
@@ -28,7 +9,9 @@ const Document = () => {
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=next" />
       <link rel="manifest" href="/site.webmanifest?v=next" />
       <link rel="shortcut icon" href="/favicon.ico?v=next" />
-      <link href={generateGoogleUrl(fonts)} rel="stylesheet" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fira+Code:wght@400;600&family=Merriweather:ital,wght@0,300;0,400;0,900;1,300;1,400;1,900&display=swap" rel="stylesheet" />
     </Head>
     <body>
       <Main />

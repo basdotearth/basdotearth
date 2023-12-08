@@ -19,18 +19,20 @@
 }
 
 .footerBrand {
+  font-family: var(--font-header);
   font-size: 1.5rem;
   font-weight: var(--fw-bold);
+  font-style: italic;
+  text-transform: uppercase;
+  color: rgb(var(--accent));
   line-height: 1rem;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   user-select: none;
 }
 
 .footerContent {
   margin: 0;
-  color: rgba(var(--fg) / 50%);
+  color: rgb(var(--light-grey));
+  font-weight: var(--fw-light);
 }
 
 .footerCopyright {
