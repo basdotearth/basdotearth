@@ -1,30 +1,28 @@
-import Home from 'components/Pages/Home';
-import type { HomeProps } from 'components/Pages/Home';
+import Resume from 'components/Pages/Resume';
+import type { ResumeProps } from 'components/Pages/Resume';
 import { collectStaticContent } from 'helpers/mdx';
 import { resolvePromisesObject } from 'helpers/promises';
-import type { BlogPostMeta, PlaygroundMeta } from 'types/index';
 import type { CombinedResult, ErrorResult, MDXCombinedPageProps } from 'types/mdx';
+import type { EducationMeta, ExperienceMeta } from 'types/index';
 
-export const getStaticProps: MDXCombinedPageProps<HomeProps> = async () => {
+export const getStaticProps: MDXCombinedPageProps<ResumeProps> = async () => {
   const results = await resolvePromisesObject({
-    posts: collectStaticContent<BlogPostMeta>({
-      type: 'posts',
-      filter: (i) => i.isPublished,
-      sort: (a, b) => (new Date(a.publishedOn)).valueOf() - (new Date(b.publishedOn)).valueOf(),
+    experience: collectStaticContent<ExperienceMeta>({
+      type: 'resumeExperience',
+      sort: (a, b) => (new Date(b.start)).valueOf() - (new Date(a.start)).valueOf(),
     }),
-    playground: collectStaticContent<PlaygroundMeta>({
-      type: 'playground',
-      filter: (i) => i.isPublished,
-      sort: (a, b) => (new Date(a.publishedOn)).valueOf() - (new Date(b.publishedOn)).valueOf(),
+    education: collectStaticContent<EducationMeta>({
+      type: 'resumeEducation',
+      sort: (a, b) => (new Date(b.start)).valueOf() - (new Date(a.start)).valueOf(),
     }),
-  }) as CombinedResult<HomeProps, true>;
+  }) as CombinedResult<ResumeProps, true>;
 
   const error = Object.values(results).find(result => 'errorCode' in result);
   if (error !== undefined) {
     return { props: error as ErrorResult };
   }
 
-  return { props: results as CombinedResult<HomeProps, false> };
+  return { props: results as CombinedResult<ResumeProps, false> };
 };
 
-export default Home;
+export default Resume;
