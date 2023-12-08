@@ -7,11 +7,11 @@ tags:
   - Utility
 isPublished: true
 publishedOn: '2022-12-05T07:45:00+0100'
-updatedOn: '2022-12-13T13:55:40.333Z'
+updatedOn: '2023-12-08T16:13:30.147Z'
 ---
-As a developer I tend to lean more towards standards over implementation. I am really not that bothered if something takes 2ms longer to compile or even execute if it means that most developers will be able to read and understand the code in the future. For the same reason I prefer tools like LitElement over React. While React is definitely the industry standard at this point, they make a point of "being clever" instead of being transparent.
+As a developer I tend to lean more towards standards over implementation. I am really not that bothered if something takes 2ms longer to compile or execute if it means that most developers will be better able to read and understand the code in the future. For this same reason I prefer tools like LitElement over React. While React is definitely the industry standard at this point, a lot of the logic is "cleverly" hidden and structured instead of being transparent and more aligned with standards.
 
-One thing that both Lit and React have in common however, is that they both require you to pass a string for CSS classes. There are a million packages on npm that will help you with this specific issue, but why install, update and maintain dependencies for something you can write yourself in 10 minutes? In most projects, I find myself crossing a point where the `.join(' ')`s become cumbersome and I whip up a variation on the following:
+One thing that Lit and React have in common is that they both require you to pass a string for CSS classes. There are a million packages on npm that will help you with this specific issue, but why install, update and maintain dependencies for something you can write yourself in 10 minutes? In most projects, I find myself crossing a point where the `.join(' ')`s become cumbersome and I whip up a variation on the following:
 
 ```typescript
 export const classes = (input: string | string[] | Record<string, boolean>): string => {
@@ -30,7 +30,7 @@ export const classes = (input: string | string[] | Record<string, boolean>): str
 };
 ```
 
-This then allows you to do the following in your components:
+This allows you to do the following in your components:
 
 ```jsx
 <div
@@ -44,7 +44,7 @@ This then allows you to do the following in your components:
 </div>
 ```
 
-The type of implementation in a LitElement could look something like:
+The implementation in LitElement could look something like:
 
 ```javascript
 get wrapperClasses() {
@@ -60,4 +60,4 @@ render() {
 }
 ```
 
-I regularly update this function when I (or more often one of my team-mates) think of something smart to check or fix.
+I regularly update this function when we think of a smart addition to it.

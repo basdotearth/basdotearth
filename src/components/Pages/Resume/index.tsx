@@ -12,7 +12,7 @@ export type ResumeProps = { experience: ExperienceMeta, education: EducationMeta
 
 const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
   return <>
-    <Head title="Resume" description="Frontend Developer and upcoming Product Owner" />
+    <Head title="Resume" description="Product Owner and Senior Frontend Developer" />
     <section className={[styles.pageHeader, 'fillSVG'].join(' ')}>
       <Header />
       <div className={styles.headerContent}>
@@ -36,7 +36,7 @@ const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
             I have a passion for <em>post-rock</em>, <em>good books</em> and <em>great beer</em>.
           </li>
           <li>
-            I&apos;m currently <em>32 years old</em>, and I live in <em>Gouda</em>, NL with <em>my wife</em> Marleen.
+            I&apos;m currently <em>33 years old</em>, and I live in <em>Gouda</em>, NL with <em>my wife</em> Marleen.
           </li>
         </ul>
       </div>

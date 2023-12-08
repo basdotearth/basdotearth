@@ -11,5 +11,5 @@ tags:
   - CLI
   - Architecture
 ---
-The IML team was tasked with implementing a new way of working for Datacare at VGZ. As part of this team I helped to bring a transition to micro-frontends and -services by developing a new platform based on Azure. I developed custom tooling using LitElement, a custom NodeJS CLI-tool, and more. The team operated as a “competence center” for these new techniques.
+The IML team was tasked with implementing a new way of working for Datacare at VGZ. As part of this team I helped bring about a transition to micro-frontends and -services by developing a new platform based on Azure. I developed custom tooling using LitElement, a custom NodeJS CLI-tool, and more.<br><br>The team operated as a “competence centre” for these new techniques, where we collected requirements and feedback and provided information and instruction to increase adoption of the toolkit.
 ---
