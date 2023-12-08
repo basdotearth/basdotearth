@@ -5,15 +5,9 @@ const useDarkMode = (): [boolean, Dispatch<boolean>] => {
   const [initial, setInitial] = useState(true);
 
   useEffect(() => {
-    const query = '(prefers-color-scheme: dark)';
     const stored = window.localStorage.getItem('darkMode');
-    const current = stored !== null ? JSON.parse(stored) : window.matchMedia(query).matches;
+    const current = stored !== null ? JSON.parse(stored) : false;
     setDarkMode(current);
-
-    const listener = (event: MediaQueryListEvent) => setDarkMode(event.matches);
-    window.matchMedia(query).addEventListener('change', listener);
-
-    return window.matchMedia(query).removeEventListener('change', listener);
   }, []);
 
   useEffect(() => {

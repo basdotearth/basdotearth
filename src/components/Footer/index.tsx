@@ -9,7 +9,7 @@ const Footer: FC = () => (
         <p className={styles.footerContent}>
           <span className={styles.footerBrand}>Bas Klinkhamer</span>
         </p>
-        <p className={[styles.footerContent, styles.footerCopyright].join(' ')}>&copy; 2022 - Today</p>
+        <p className={[styles.footerContent, styles.footerCopyright].join(' ')}>&copy; 2016 - Today</p>
       </div>
       <div className={styles.footerBlock}>
         <p className={styles.footerContent}>

@@ -14,5 +14,5 @@ tags:
   - Cypress
   - Communication
 ---
-At KLM I worked as Frontend Lead on a large internal project where the multiple HR-related websites used by 32.000 KLM employees were replaced by a new custom system. Within the project I helped generate a result that improved on speed, usability and accessibility by using a combination of new techniques. Next to this I set up a new Frontend test-flow using Cypress en Atlassian Bamboo.
+At KLM I worked as Frontend Lead on a large internal project where the multiple HR-related websites used by 32.000 KLM employees were replaced by a new custom system. Within the project I helped generate a result that improved on speed, usability and accessibility by using a combination of new techniques.<br><br>Next to this I set up a new Frontend test-flow using Cypress en Atlassian Bamboo.
 ---

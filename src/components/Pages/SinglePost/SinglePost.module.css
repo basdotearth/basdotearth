@@ -10,18 +10,23 @@
 
 .title {
   margin: 6rem 0 1rem;
-  color: currentColor;
-  font-size: 2.5rem;
+  font-family: var(--font-header);
+  font-size: 3rem;
   font-weight: var(--fw-bold);
   text-align: center;
   line-height: 1.15;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
 }
 
 .published {
   margin: 0;
-  color: rgba(var(--fg) / 40%);
   font-size: 1rem;
+  font-weight: var(--fw-light);
+  font-style: italic;
+  color: rgb(var(--light-grey));
   text-align: center;
+  text-transform: lowercase;
 }
 
 .timestamps {
@@ -56,6 +61,8 @@
   margin: 0 0 0 1.5rem;
   color: rgb(var(--text-color));
   transition: color var(--transition);
+  line-height: 1.5;
+  font-style: italic;
 }
 
 .content ul > li::before {

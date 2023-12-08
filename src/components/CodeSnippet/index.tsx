@@ -22,7 +22,7 @@ const CodeSnippet: FC<CodeSnippetProps> = ({ children }) => {
       language={language}
     >
       {({ className, tokens, getLineProps, getTokenProps }) => (
-        <pre className={classes([className, styles.codeSnippet])}>
+        <pre className={classes([className, styles.codeSnippet, 'box'])}>
           {tokens.map((line, i) => (
             <div key={`line--${i}`} {...getLineProps({ line, key: i })}>
               {line.map((token, key) => {

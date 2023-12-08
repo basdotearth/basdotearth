@@ -14,17 +14,23 @@
 
 .overviewTitle {
   margin: 0;
-  color: currentColor;
-  font-size: 2.5rem;
+  font-family: var(--font-header);
+  font-size: 3rem;
   font-weight: var(--fw-bold);
   line-height: 1.15;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
 }
 
 .overviewSupport {
   margin: 0 0 2rem;
   font-size: 1.5rem;
-  font-weight: var(--fw-regular);
+  font-family: var(--font-serif);
+  font-weight: var(--fw-light);
+  font-style: italic;
   line-height: 1.15;
+  text-transform: unset;
+  letter-spacing: unset;
 }
 
 
@@ -32,13 +38,13 @@
   --arrow-opacity: 0;
   --arrow-offset: 0rem;
   --title-color: var(--fg);
+  --read-more: var(--light-grey);
   display: flex;
   margin: 0 0 3rem;
   padding: 1rem;
   color: rgb(var(--fg));
   flex-direction: column;
   border: 1px solid rgba(var(--border));
-  border-radius: 0.5rem;
   transition: border var(--transition);
 }
 
@@ -46,9 +52,12 @@
   margin: 0 0 0.5rem;
   font-size: 1.5rem;
   line-height: 1.25;
+  font-family: var(--font-header);
   font-weight: var(--fw-semibold);
   color: rgb(var(--title-color));
   transition: color var(--transition);
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
 }
 
 .postIntro {
@@ -59,7 +68,11 @@
 .postButton {
   position: relative;
   font-size: 1rem;
-  font-weight: var(--fw-bold);
+  font-weight: var(--fw-light);
+  font-style: italic;
+  color: rgb(var(--read-more));
+  text-transform: lowercase;
+  transition: color var(--transition);
 }
 
 .postButton::after {
@@ -79,6 +92,7 @@
   --arrow-opacity: 1;
   --arrow-offset: 1rem;
   --title-color: var(--accent);
+  --read-more: var(--accent);
   --border: var(--accent);
 }
 

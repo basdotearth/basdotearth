@@ -25,12 +25,17 @@
 
 .brand {
   margin: 0 0 1rem;
+  font-family: var(--font-header);
   font-size: var(--brand-size);
   font-weight: var(--fw-bold);
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  font-style: italic;
   user-select: none;
+}
+
+.activeLink {
+  text-decoration: underline;
+  text-decoration-color: currentColor;
 }
 
 .textNav {
@@ -40,8 +45,9 @@
 
 .textNav a {
   margin: 0 var(--link-spacing) 0 0;
-  letter-spacing: 0.5px;
-  color: inherit;
+  color: rgb(var(--light-grey));
+  font-weight: var(--fw-light);
+  font-style: italic;
 }
 
 .textNav a:last-of-type {

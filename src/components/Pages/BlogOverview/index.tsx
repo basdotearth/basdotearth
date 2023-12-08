@@ -18,7 +18,7 @@ const BlogOverview: MDXOverviewPage<BlogPostMeta> = ({ items }) => {
       <div className={styles.overviewGrid}>
         { items.map((post, index) => (
           <Link href={`blog/${post.slug}`} key={`post--${index}`}>
-            <a className={styles.postItem}>
+            <a className={[styles.postItem, 'box'].join(' ')}>
               <h2 className={styles.postTitle}>{post.title}</h2>
               <p className={styles.postIntro}>{post.abstract}</p>
               <div>
