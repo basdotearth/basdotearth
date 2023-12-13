@@ -54,7 +54,7 @@ const Header: FC<HeaderProps> = ({ fillBg = true, offset = 0 }) => {
             height={20}
           />
         </a>
-        <Link href="rss.xml">
+        <Link href="/rss.xml">
           <a><Icon icon={EIcons.RSS} width={20} height={20} /></a>
         </Link>
       </nav>
