@@ -12,7 +12,7 @@ export type ResumeProps = { experience: ExperienceMeta, education: EducationMeta
 
 const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
   return <>
-    <Head title="Resume" description="Product Owner and Senior Frontend Developer" />
+    <Head title="Resume" description="Professional Product Owner and Senior Frontend Developer" />
     <section className={[styles.pageHeader, 'fillSVG'].join(' ')}>
       <Header />
       <div className={styles.headerContent}>

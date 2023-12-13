@@ -10,11 +10,11 @@ import styles from './BlogOverview.module.css';
 
 const BlogOverview: MDXOverviewPage<BlogPostMeta> = ({ items }) => {
   return <>
-    <Head title="Blog" description={`${items.length} blogposts on code and other things.`} />
+    <Head title="Blog" description={`${items.length} blogposts on Product, Code and other things.`} />
     <Header />
     <main className={styles.overview}>
       <h1 className={styles.overviewTitle}>Blogposts</h1>
-      <h1 className={styles.overviewSupport}>Both code-related and otherwise.</h1>
+      <h1 className={styles.overviewSupport}>On Product, Code and other things.</h1>
       <div className={styles.overviewGrid}>
         { items.map((post, index) => (
           <Link href={`blog/${post.slug}`} key={`post--${index}`}>
