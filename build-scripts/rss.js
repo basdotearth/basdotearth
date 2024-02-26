@@ -49,7 +49,7 @@ const createRssFeed = async () => {
 
   const feed = new RSS({
     title: author,
-    description: 'Professional Product Owner and Senior Frontend Developer',
+    description: 'Techical Product Owner with 10+ years of technical experience.',
     feed_url: `${baseUrl}/rss.xml`,
     site_url: baseUrl,
     copyright: `Copyright 2016 - Today: ${author}`,
