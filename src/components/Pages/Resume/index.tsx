@@ -12,21 +12,20 @@ export type ResumeProps = { experience: ExperienceMeta, education: EducationMeta
 
 const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
   return <>
-    <Head title="Resume" description="Product Owner and Senior Frontend Developer" />
+    <Head title="Resume" description="Technical Product Owner with 10+ years of technical experience" />
     <section className={[styles.pageHeader, 'fillSVG'].join(' ')}>
       <Header />
       <div className={styles.headerContent}>
         <h1 className={styles.headerTitle}>Hello, my name is Bas.</h1>
         <h2 className={styles.headerSupport}>
-          after 10+ years of experience as a developer I was ready for the next step.
+          I&apos;m a Technial Product Owner with 10+ years of technical experience.
         </h2>
         <ul className={styles.lead}>
           <li>
-          In 2022 I started my transition towards becoming a <em>Product Owner</em>.
+          In 2022 I moved from Senior- and Lead-Developer to <em>Product Owner</em>.
           </li>
           <li>
-            I <em>read up</em> on the lore, got some <em>real-world experience</em>&nbsp;
-            and acquired my <em>certification.</em>
+            Next to my <em>experience</em> I have my <em>PSPO-I and -II certifications</em>.
           </li>
           <li>
             I&apos;m a strong proponent of <em>Agile development</em>&nbsp;

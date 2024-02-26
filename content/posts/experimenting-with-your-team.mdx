@@ -1,0 +1,60 @@
+---
+title: Experimenting with your team
+seoTitle: >-
+  Experimenting with your team: Evidence-based discovery has a large
+  administrative cost? That doesn't have to be true!
+abstract: >-
+  Our team was struggling to implement a huge JS library. We thought we could do
+  better without it. Here's how we came to actually know it was true.
+tags:
+  - Experimenting
+  - EBM
+  - Prototyping
+isPublished: true
+publishedOn: '2023-12-13T12:45:00+0100'
+updatedOn: '2024-02-26T11:48:57.099Z'
+---
+> This post is part of a series on CodePen-based experiments. [CodePen](https://codepen.io) is a great tool for scaffolding ideas, creating quick prototypes and working on projects without having to install a local IDE. I find it invaluable for experimenting with my teams!
+
+d3JS is a great charting library, but it comes with all bells and whistles attached. For my team at the time, implementing d3JS felt like we were taking on too much weight, just to show a very basic pie-chart. **We decided to experiment.** We brought the idea down to it's most basic premise:
+
+> We as a team can write a maintainable, dynamic component that will show a circle with coloured divisions in it.
+
+Though the end result is far more complex, step one was getting back to this simple premise and to try and draw a pie graph using only native HTML and CSS. I've listed our three steps of experimenting below. Each of these steps had it's own hypotheses, which we wanted to see proven or disproven before putting in more effort.
+
+## The whole process lasted less than a day.
+It's often assumed that doing this type of evidence-based discovery has a large administrative cost, but that doesn't have to be true. In this case we found that we had multiple questions that we wanted to answer:
+1. We find native technology like HTML/CSS/JS to be the easiest to maintain. Can we use these to make a simple pie chart?
+1. Can you build a "complicated" pie chart with multiple pieces, different sizes and colours, etc?
+1. Can we make it dynamic so that other teams can use it in a simple way?
+
+During refinement we discussed this as one big process, where I would set up some model for our experiment, and one developer would take up the work and would show off the result when ready, probably by the next day.
+
+**This meant that the time before we could act on our learnings was two days.**
+
+We decided to turn our questions into separate hypotheses, and replace the paper model with clear communication. We would kick off together, and after each prototype had been built we would reconvene and discuss if the learnings validated our hypotheses.
+
+**This meant that we could act (continue / break off) after a few hours.**
+
+We were more flexible and could avoid potentially spending a day and a half of wasted effort.
+
+### Step 1: Can we build it using native technology?
+We "discovered" that we could use CSS Variables to create a simple pie chart, with the end of our piece positioned flexibally along the circle.
+<CodePen id="WNbVKwM" />
+We discussed that this result was scalable, so it validated our first hypothesis.
+
+### Step 2: Can we make this complicated?
+This solution has a limited amount of pieces, but the complex `calc()` logic in CSS validated our assumption that flexible charts should be possible.
+<CodePen id="MWYNqBj" />
+I had some doubts with these results. The hypotheses was validated, but there was discussion on whether this would scale. The complexity of the logic pushed the team towards having this discussion as early as possible. We pushed the issue with scalability to the last hypotheses and decided to continue.
+
+### Step 3: Can we make this dynamic?
+In this step I really saw the power of an experiment. The developers looked into the usecase we had put forward: _"It should be very simple for any given team to just provide the variables, the component should take care of presenting them."_ They quickly found out that the `calc()` logic used in the previous step did not scale to allow this. They moved part of this logic to Javascript to make this possible.
+<CodePen id="NWPQOKG" />
+The team scrapped one implementation for the other, does that mean that the previous experiment has been invalidated? In my opinion, it does not. The question we asked was very specific: _"Can you build a complicated pie chart with multiple pieces, different sizes and colours"_. The unspoken part of the question was _"...without using d3JS"_. **That** is what we wanted to validate, and we did. Adding _"...and make it scale"_ was deliberately pulled out of scope.
+
+## This was a very small experiment
+
+Nevertheless, it was a great introduction of the "experimenting mindset" for the team. For weeks afterward, when we were refining complex topics you could often hear a developer saying "is there an easier way to validate this?"
+
+I think this approach to experimenting scales to bigger questions. Don't put all of your eggs in one basket, find out what you want to learn _first_ and zoom in on that specific question. **Let's build the right thing!**

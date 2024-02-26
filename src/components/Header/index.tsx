@@ -32,7 +32,7 @@ const Header: FC<HeaderProps> = ({ fillBg = true, offset = 0 }) => {
       <nav className={styles.textNav}>
         <Link href="/">
           <a className={classes({ [styles.activeLink]: route === '/' })}>
-            Resume
+            Resum&eacute;
           </a>
         </Link>
         <Link href="/blog">
@@ -54,7 +54,7 @@ const Header: FC<HeaderProps> = ({ fillBg = true, offset = 0 }) => {
             height={20}
           />
         </a>
-        <Link href="rss.xml">
+        <Link href="/rss.xml">
           <a><Icon icon={EIcons.RSS} width={20} height={20} /></a>
         </Link>
       </nav>

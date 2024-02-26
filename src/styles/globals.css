@@ -82,7 +82,7 @@ h5 {
 
 p {
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
   margin: 0 0 1rem;
 }
 
@@ -97,6 +97,24 @@ a {
 code, pre {
   font-family: var(--font-mono);
   font-weight: var(--fw-code-regular);
+}
+
+blockquote {
+  --highlightColor: var(--light-grey);
+  margin: 0 0 2rem;
+  padding: 1rem 0 1rem 2rem;
+  font-style: italic;
+  color: rgb(var(--accent));
+  border-left: 1px solid rgb(var(--highlightColor));
+  transition: border-color var(--transition);
+}
+
+blockquote:hover {
+  --highlightColor: var(--accent);
+}
+
+blockquote p {
+  margin: 0;
 }
 
 p.lead {
@@ -123,6 +141,13 @@ body.dark {
 
 .box {
   border: 1px solid rgb(var(--light-grey));
+}
+
+.cp_embed_wrapper {
+  margin-bottom: 2rem;
+}
+
+.box, .cp_embed_wrapper {
   box-shadow: 3px 3px rgb(var(--bg)), 4px 4px rgb(var(--accent) / 40%), 7px 7px rgb(var(--bg)), 8px 8px rgb(var(--light-grey) / 40%);
 }
 

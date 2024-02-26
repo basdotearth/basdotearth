@@ -16,7 +16,7 @@ const PlaygroundOverview: MDXOverviewPage<PlaygroundMeta> = ({ items }) => {
     <Header />
     <main className={styles.overview}>
       <h1 className={styles.overviewTitle}>Playground</h1>
-      <h1 className={styles.overviewSupport}>Simple snippets, or TIL today.</h1>
+      <h1 className={styles.overviewSupport}>Quick snippets, POCs and TIL today.</h1>
       { items.map((item, index) => (
         <Link href={`/playground/${item.slug}`} key={`item--${index}`}>
           <a className={[styles.itemCard, 'box'].join(' ')}>
