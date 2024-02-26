@@ -9,13 +9,13 @@ import useDarkMode from 'hooks/useDarkMode';
 import styles from './CodePen.module.css';
 
 interface CodePenprops {
-  height: number;
+  height?: number;
   id: string;
   openTab?: 'html' | 'css' | 'js';
   usePreview?: boolean;
 }
 
-const CodePen: FC<CodePenprops> = ({ height, id, openTab, usePreview = false }) => {
+const CodePen: FC<CodePenprops> = ({ height = 500, id, openTab, usePreview = false }) => {
   const [darkMode] = useDarkMode();
   const tabs = [openTab, 'result'].filter(i => i).join(',');
 
