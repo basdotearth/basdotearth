@@ -9,7 +9,7 @@ export const getStaticProps: MDXOverviewPageProps<BlogPostMeta> = async () => {
     props: await collectStaticContent({
       type: 'posts',
       filter: (i) => i.isPublished,
-      sort: (a, b) => (new Date(a.publishedOn)).valueOf() - (new Date(b.publishedOn)).valueOf(),
+      sort: (a, b) => (new Date(b.publishedOn)).valueOf() - (new Date(a.publishedOn)).valueOf(),
     }),
   };
 };
