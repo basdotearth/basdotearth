@@ -13,5 +13,5 @@ tags:
   - Communication
   - DevEx
 ---
-Using LitElement components, ESNext and a NodeJS backend, our small “Synergy” team built an internal platform where every team can generate their own educational content.<br><br>Next to my work as a developer I was also a contact for users and content-providers of this application.
+At ING, many teams were creating internal tools that needed documentation and “How to” guides. Our team built an internal platform using LitElement components, ESNext and a NodeJS backend, where every ING team can generate their own educational content.<br><br>I was part of the team as both developer and Scrum Master. I was also a contact for users and content providers of this application.
 ---

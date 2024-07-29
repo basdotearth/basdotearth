@@ -1,5 +1,6 @@
 ---
 start: '2022-04-01'
+end: '2024-02-28'
 company: viaBovag.nl
 location: Amsterdam, NL
 tags:

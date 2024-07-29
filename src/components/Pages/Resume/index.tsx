@@ -12,30 +12,29 @@ export type ResumeProps = { experience: ExperienceMeta, education: EducationMeta
 
 const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
   return <>
-    <Head title="Resume" description="Technical Product Owner with 10+ years of technical experience" />
+    <Head title="Resume" description="Technical Product Owner and developer with 10+ years of experience" />
     <section className={[styles.pageHeader, 'fillSVG'].join(' ')}>
       <Header />
       <div className={styles.headerContent}>
         <h1 className={styles.headerTitle}>Hello, my name is Bas.</h1>
         <h2 className={styles.headerSupport}>
-          I&apos;m a Technial Product Owner with 10+ years of technical experience.
+          I&apos;m a Technical Product Owner and a developer with 10+ years of experience.
         </h2>
         <ul className={styles.lead}>
           <li>
-          In 2022 I moved from Senior- and Lead-Developer to <em>Product Owner</em>.
+          In 2022 I pivoted from Senior- and Lead- FE Developer to <em>Product Owner</em>.
           </li>
           <li>
-            Next to my <em>experience</em> I have my <em>PSPO-I and -II certifications</em>.
+            I've added certifications like <em>PSPO-I</em> and <em>-II</em> to my experience.
           </li>
           <li>
-            I&apos;m a strong proponent of <em>Agile development</em>&nbsp;
-            and worked as a <em>Scrum Master</em> to help teams reach their goals.
+            I support <em>Agile development</em> and have worked as a <em>Scrum Master</em>.
           </li>
           <li>
-            I have a passion for <em>post-rock</em>, <em>good books</em> and <em>great beer</em>.
+            I like <em>good music</em>, <em>thick books</em> and <em>building stuff</em> in the frontend stack.
           </li>
           <li>
-            I&apos;m currently <em>33 years old</em>, and I live in <em>Gouda</em>, NL with <em>my wife</em> Marleen.
+            I&apos;m currently <em>34 years old</em>, and I live in <em>Gouda</em>, NL with <em>my wife</em> Marleen.
           </li>
         </ul>
       </div>
@@ -78,15 +77,16 @@ const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
       <section className={styles.hobbies}>
         <h3 className={styles.sectionTitle}>Hobbies & Personal Life</h3>
         <p>
-          I like to tinker with IoT devices and (TS-)Node, and sometimes I even manage to combine them.
+          I live in an old house that needs a lot of DIY attention,
+          and I make fun projects using Raspberry Pi&apos;s and the Frontend stack.&nbsp;
+          (Ask me about the red telephone!)
           I work to improve myself and my colleagues, and to earn the money I spend travelling Europe and the world.
         </p>
         <p>
-          Fun memories include backpacking in Australia with a small 35-liter backpack,
-          and a year of working in Hungary. I&apos;ve learned to make the most out of the least amount of stuff,
-          and I try to keep my possessions to a minimum. (I keep failing with books and records...)
+          Fun memories include backpacking through Australia with a small 35-litre backpack,
+          and a year of working in Hungary.
+          I love alternative music and very thick Sci-Fi and Fantasy books.
         </p>
-        <p>I&apos;m a sucker for dark beer and a good board game.</p>
       </section>
     </main>
     <Footer />
