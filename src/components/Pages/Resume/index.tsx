@@ -25,7 +25,7 @@ const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
           In 2022 I pivoted from Senior- and Lead- FE Developer to <em>Product Owner</em>.
           </li>
           <li>
-            I've added certifications like <em>PSPO-I</em> and <em>-II</em> to my experience.
+            I&apos;ve added certifications like <em>PSPO-I</em> and <em>-II</em> to my experience.
           </li>
           <li>
             I support <em>Agile development</em> and have worked as a <em>Scrum Master</em>.
