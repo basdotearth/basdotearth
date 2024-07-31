@@ -12,26 +12,27 @@ export type ResumeProps = { experience: ExperienceMeta, education: EducationMeta
 
 const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
   return <>
-    <Head title="Resume" description="Technical Product Owner and developer with 10+ years of experience" />
+    <Head title="Resume" description="Senior and Lead Frontend Developer with 10+ years of experience" />
     <section className={[styles.pageHeader, 'fillSVG'].join(' ')}>
       <Header />
       <div className={styles.headerContent}>
         <h1 className={styles.headerTitle}>Hello, my name is Bas.</h1>
         <h2 className={styles.headerSupport}>
-          I&apos;m a Technical Product Owner and a developer with 10+ years of experience.
+          I&apos;m a Senior and Lead Frontend Developer with 10+ years of experience.
         </h2>
         <ul className={styles.lead}>
           <li>
-          In 2022 I pivoted from Senior- and Lead- FE Developer to <em>Product Owner</em>.
+            I stack <em>TS</em>, <em>ESNext</em> and <em>CSS Vars</em> using tools like <em>React</em> and <em>Vue</em>.
           </li>
           <li>
-            I&apos;ve added certifications like <em>PSPO-I</em> and <em>-II</em> to my experience.
+            I support <em>Agile teams</em> with <em>DevOps</em>,&nbsp;
+            <em>CI/CD pipelines</em> and as a <em>Scrum Master</em>.
           </li>
           <li>
-            I support <em>Agile development</em> and have worked as a <em>Scrum Master</em>.
+            I&apos;ve added <em>LEAN</em> and <em>Scrum.org</em> certifications to my experience.
           </li>
           <li>
-            I like <em>good music</em>, <em>thick books</em> and <em>building stuff</em> in the frontend stack.
+            I like <em>good music</em>, <em>thick books</em> and <em>building stuff</em> in the real world.
           </li>
           <li>
             I&apos;m currently <em>34 years old</em>, and I live in <em>Gouda</em>, NL with <em>my wife</em> Marleen.
@@ -79,7 +80,7 @@ const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
         <p>
           I live in an old house that needs a lot of DIY attention,
           and I make fun projects using Raspberry Pi&apos;s and the Frontend stack.&nbsp;
-          (Ask me about the red telephone!)
+          (Ask me about the WordClock or the red telephone!)
           I work to improve myself and my colleagues, and to earn the money I spend travelling Europe and the world.
         </p>
         <p>
