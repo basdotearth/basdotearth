@@ -1,5 +1,6 @@
 ---
 start: '2024-02-28'
+end: '2024-08-31'
 company: Scrum Facilitators
 location: Amersfoort, NL
 tags:
