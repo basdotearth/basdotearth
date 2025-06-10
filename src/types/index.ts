@@ -1,9 +1,16 @@
+export enum JobType {
+  PRODUCT_OWNER = 'product-owner',
+  DEVELOPER = 'developer',
+  AGILE_CONSULT = 'agile-consult',
+}
+
 export type ExperienceMeta = {
   start: string;
   end?: string;
   company: string;
   location: string;
   tags: string[];
+  type: JobType[];
 };
 
 export type EducationMeta = {

@@ -1,16 +1,25 @@
+import React from 'react';
+
 import Footer from 'components/Footer';
 import Head from 'components/Head';
 import Header from 'components/Header';
 import type { MDXCombinedPage } from 'types/mdx';
 import TagList from 'components/TagList';
 import { isoToMonthYear } from 'helpers/date';
-import type { EducationMeta, ExperienceMeta } from 'types/index';
+import { type EducationMeta, type ExperienceMeta, JobType } from 'types/index';
 
 import styles from './Resume.module.css';
+
+const jobTypeTitles: Record<JobType, string> = {
+  [JobType.PRODUCT_OWNER]: 'Product Owner',
+  [JobType.DEVELOPER]: 'Developer',
+  [JobType.AGILE_CONSULT]: 'Agile Consultant',
+};
 
 export type ResumeProps = { experience: ExperienceMeta, education: EducationMeta };
 
 const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
+  const [expFilter, setExpFilter] = React.useState<JobType | null>(null);
   return <>
     <Head title="Resume" description="Product Owner, Frontend Developer with 10+ years of experience and Agile Change Agent" />
     <section className={[styles.pageHeader, 'headerBG'].join(' ')}>
@@ -44,11 +53,33 @@ const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
         </ul>
       </div>
     </section>
+
     <main className={styles.main}>
       <section className={styles.experience}>
-        <h3 className={styles.sectionTitle}>Experience</h3>
+        <div className={styles.experienceToggles}>
+          <h3 className={styles.sectionTitle}>Experience</h3>
+          {Object.entries(jobTypeTitles).map(([id, title]) => (
+            <button
+              key={id}
+              className={[styles.experienceToggle, expFilter === id ? styles.active : '' ].join(' ')}
+              onClick={() => setExpFilter(id as JobType)}
+            >
+              { title }
+            </button>
+          ))}
+          <button
+            className={[styles.experienceToggle, expFilter === null ? styles.active : '' ].join(' ')}
+            onClick={() => setExpFilter(null)}
+          >
+            All
+          </button>
+        </div>
+
         { experience.items.map((exp, index) => (
-          <div className={styles.experienceItem} key={`item--${index}`}>
+          <div
+            className={styles.experienceItem} key={`item--${index}`}
+            data-active={expFilter ? exp.type.includes(expFilter) : true}
+          >
             <div className={styles.experienceHeader}>
               <h2 className={styles.experienceTitle}>{exp.company}</h2>
               <p className={styles.experienceDate}>
