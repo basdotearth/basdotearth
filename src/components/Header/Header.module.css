@@ -26,15 +26,8 @@
   margin: 0 0 1rem;
   font-family: var(--font-header);
   font-size: var(--brand-size);
-  font-weight: var(--fw-bold);
-  text-transform: uppercase;
-  font-style: italic;
+  font-weight: var(--fw-light);
   user-select: none;
-}
-
-.activeLink {
-  text-decoration: underline;
-  text-decoration-color: currentColor;
 }
 
 .textNav {
@@ -45,12 +38,14 @@
 .textNav a {
   margin: 0 var(--link-spacing) 0 0;
   color: rgb(var(--light-grey));
-  font-weight: var(--fw-light);
-  font-style: italic;
 }
 
 .textNav a:last-of-type {
   margin-right: 0;
+}
+
+a.activeLink {
+  color: rgb(var(--accent));
 }
 
 .iconNav {

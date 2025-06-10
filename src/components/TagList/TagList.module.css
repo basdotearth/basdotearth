@@ -3,17 +3,45 @@
   flex-wrap: wrap;
   border-top: 1px solid rgb(var(--light-grey) / 40%);
   margin-top: 1rem;
-  padding-top: 0.5rem;
+  padding: 0.5rem 0 0 0.75rem;
+  gap: 0.5rem;
 }
 
 .tag {
+  position: relative;
   display: flex;
+  padding: 0.25rem 0.5rem 0.25rem 0.25rem;
   margin: 0.5rem 1rem 0 0;
+  min-width: 2.5rem;
   align-items: center;
   font-size: 0.8rem;
-  font-style: italic;
+  text-indent: 0.5rem;
   font-weight: var(--fw-light);
-  color: rgb(var(--light-grey));
+  color: rgb(var(--bg));
+  background-color: rgb(var(--light-grey));
+  border-left: unset;
+  border-radius: 0 3px 3px 0;
+}
+
+.tag::before {
+  position: absolute;
+  left: -0.55rem;
+  height: 70%;
+  aspect-ratio: 1;
+  background-color: rgb(var(--light-grey));
+  border-bottom-left-radius: 3px;
+  content: '';
+  transform: rotate(45deg);
+}
+
+.tag::after {
+  position: absolute;
+  left: 0;
+  border-radius: 100%;
+  width: 0.25rem;
+  height: 0.25rem;
+  background-color: rgb(var(--bg));
+  content: '';
 }
 
 .tag > div {

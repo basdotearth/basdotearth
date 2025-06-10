@@ -13,7 +13,7 @@ export type ResumeProps = { experience: ExperienceMeta, education: EducationMeta
 const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
   return <>
     <Head title="Resume" description="Senior and Lead Frontend Developer with 10+ years of experience" />
-    <section className={[styles.pageHeader, 'fillSVG'].join(' ')}>
+    <section className={[styles.pageHeader, 'headerBG'].join(' ')}>
       <Header />
       <div className={styles.headerContent}>
         <h1 className={styles.headerTitle}>Hello, my name is Bas.</h1>
@@ -48,8 +48,8 @@ const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
             <div className={styles.experienceHeader}>
               <h2 className={styles.experienceTitle}>{exp.company}</h2>
               <p className={styles.experienceDate}>
-                {isoToMonthYear(exp.start)}
-                {exp.end && ` - ${isoToMonthYear(exp.end)}`}
+                {isoToMonthYear(exp.start).toLowerCase()}
+                {exp.end ? ` - ${isoToMonthYear(exp.end).toLowerCase()}` : ''}
               </p>
             </div>
             <p
@@ -68,8 +68,8 @@ const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
           <div className={[styles.educationItem, 'box'].join(' ')} key={`item--${index}`}>
             <h2 className={styles.educationTitle}>{item.title}</h2>
             <p className={styles.educationByline}>
-              {isoToMonthYear(item.start)}
-              {item.end && ` - ${isoToMonthYear(item.end)}`}
+              {isoToMonthYear(item.start).toLowerCase()}
+              {item.end ? ` - ${isoToMonthYear(item.end).toLowerCase()}` : ''}
             </p>
             <p className={styles.educationByline}>{item.byline}</p>
           </div>

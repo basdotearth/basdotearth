@@ -6,27 +6,28 @@
   flex: 1;
   background-color: rgba(var(--fg) / 5%);
   background-attachment: local, fixed;
+  color: rgb(var(--bg) / 70%);
 }
 
 .headerTitle {
   margin: var(--header-margin) 0 0;
   font-size: 3rem;
   font-family: var(--font-header);
-  font-weight: var(--fw-bold);
-  text-transform: uppercase;
+  font-weight: var(--fw-light);
   letter-spacing: -0.5px;
   line-height: 1.15;
+  color: rgb(var(--bg));
 }
 
 .headerSupport {
   margin: 0 0 3rem;
   font-size: 1.5rem;
   font-family: var(--font-serif);
-  font-weight: var(--fw-light);
-  font-style: italic;
+  font-weight: var(--fw-regular);
   line-height: 1.5;
   text-transform: unset;
   letter-spacing: unset;
+  color: rgb(var(--bg));
 }
 
 .lead {
@@ -37,15 +38,18 @@
 }
 
 .lead > li {
+  --accent: var(--bg);
   position: relative;
   margin: 0 0 0.5rem var(--arrow-offset);
 }
 
 .lead > li::before {
   position: absolute;
-  content: '\2192';
+  top: 0.25rem;
+  content: '\21B5';
   left: calc(-1 * var(--arrow-offset));
-  color: rgb(var(--accent));
+  color: rgb(var(--bg) / 60%);
+  transform: scaleX(-1) rotate(5deg);
 }
 
 .headerContent {
@@ -72,12 +76,13 @@
 
 .sectionTitle {
   margin: 0 0 2rem;
-  font-family: var(--font-header);
+  font-family: var(--font-serif);
   font-size: 1rem;
-  font-weight: var(--fw-light);
+  font-weight: var(--fw-bold);
   letter-spacing: -0.5px;
   text-transform: uppercase;
   color: rgb(var(--light-grey));
+  letter-spacing: 0.2px;
 }
 
 .experience {
@@ -99,19 +104,19 @@
 .experienceTitle {
   flex: 1;
   font-family: var(--font-header);
-  font-size: 1.5rem;
+  font-weight: var(--fw-light);
+  font-size: 2rem;
   line-height: 1.25;
   letter-spacing: -0.5px;
-  text-transform: uppercase;
 }
 
 .experienceDate {
   margin: 0;
   font-weight: var(--fw-light);
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: rgb(var(--light-grey));
   letter-spacing: -0.5px;
-  text-transform: lowercase;
+  font-variant: small-caps;
 }
 
 .experienceDescription {
@@ -137,14 +142,14 @@
   margin: 0 0 0.5rem;
   font-size: 1rem;
   line-height: 1.25;
-  font-family: var(--font-header);
-  text-transform: uppercase;
-  letter-spacing: -0.5px;
+  font-family: var(--font-serif);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.2px;
 }
 
 .educationByline {
   margin: 0;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
 }
 
 .hobbies {
