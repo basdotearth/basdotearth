@@ -92,6 +92,8 @@
   display: flex;
   padding: 1rem 0;
   margin: 0 0 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   align-items: flex-start;
   background-color: rgb(var(--bg));
@@ -99,8 +101,10 @@
 }
 
 .experienceToggles .sectionTitle {
+  width: 100%;
   flex-grow: 1;
   margin: 0;
+  text-align: center;
 }
 
 .experienceToggle {
@@ -205,4 +209,15 @@
   .main {
     grid-template-columns: 2.5fr 1fr;
   }
+
+  .experienceToggles {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
+  .experienceToggles .sectionTitle {
+    width: auto;
+    text-align: start;
+  }
+
 }
