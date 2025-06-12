@@ -1,5 +1,3 @@
-import type { FC } from 'react';
-
 import NextHead from 'next/head';
 
 export type HeadMetaTag = {
@@ -13,7 +11,7 @@ interface HeadProps {
   meta?: HeadMetaTag[];
 }
 
-const Head: FC<HeadProps> = ({ title, description, meta = [] }) => (
+const Head = ({ title, description, meta = [] }: HeadProps) => (
   <NextHead>
     <title>Bas Klinkhamer • {title}</title>
     <meta name="description" content={description} />

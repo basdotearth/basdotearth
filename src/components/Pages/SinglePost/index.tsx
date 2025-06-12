@@ -1,4 +1,3 @@
-import type { FC } from 'react';
 import { useMemo } from 'react';
 
 import { getMDXComponent } from 'mdx-bundler/client';
@@ -20,7 +19,7 @@ interface TimestampProps {
   updatedOn?: Date;
 }
 
-const Timestamp: FC<TimestampProps> = ({ publishedOn, updatedOn }) => {
+const Timestamp = ({ publishedOn, updatedOn }: TimestampProps) => {
   const date = new Date(publishedOn);
   const tz: [string, { timeZone: string }] = ['nl-NL', { timeZone: 'CET' }];
   const update = updatedOn ? new Date(updatedOn) : null;

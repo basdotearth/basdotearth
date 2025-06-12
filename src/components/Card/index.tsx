@@ -1,4 +1,4 @@
-import { type FC, type PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 
 import Link from 'next/link';
 
@@ -9,8 +9,8 @@ interface CardProps {
   link?: string;
 }
 
-const Card: FC<PropsWithChildren<CardProps>> = ({ link, title, children }) => {
-  const withLink = <Link href={link!}>
+const Card = ({ link, title, children }: PropsWithChildren<CardProps>) => {
+  const withLink = <Link legacyBehavior href={link!}>
     <a className={styles.card}>
       <h2>{title} &rarr;</h2>
       {children}

@@ -1,8 +1,8 @@
 import { bundleMDX } from 'mdx-bundler';
-import { cwd } from 'process';
-import { join } from 'path';
+import { cwd } from 'node:process';
+import { join } from 'node:path';
 import matter from 'gray-matter';
-import { readFile, readdir } from 'fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 
 import type {
   CollectedItem,

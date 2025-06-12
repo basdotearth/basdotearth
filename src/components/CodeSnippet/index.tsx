@@ -1,4 +1,4 @@
-import type { DetailedHTMLProps, FC, HTMLAttributes, ReactElement } from 'react';
+import type { ComponentProps, DetailedHTMLProps, HTMLAttributes } from 'react';
 
 import { Highlight } from 'prism-react-renderer';
 
@@ -8,14 +8,14 @@ import styles from './CodeSnippet.module.css';
 
 type CodeSnippetProps = DetailedHTMLProps<HTMLAttributes<HTMLPreElement>, HTMLElement>;
 
-const CodeSnippet: FC<CodeSnippetProps> = ({ children }) => {
-  const { props } = children as ReactElement;
-  const language = props.className.split('-').pop() ?? '';
+const CodeSnippet = ({ children }: CodeSnippetProps) => {
+  const { props } = children as { props: ComponentProps<'pre'> };
+  const language = (props.className ?? '').split('-').pop() ?? '';
 
   return <div className={styles.codeSnippetWrapper}>
     <div className={styles.codeSnippetLanguage}>{ language }</div>
     <Highlight
-      code={props.children}
+      code={String(props.children)}
 
       // @ts-ignore
       language={language}

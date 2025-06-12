@@ -1,5 +1,3 @@
-import type { FC } from 'react';
-
 import Link from 'next/link';
 import Script from 'next/script';
 
@@ -15,7 +13,7 @@ interface CodePenprops {
   usePreview?: boolean;
 }
 
-const CodePen: FC<CodePenprops> = ({ height = 500, id, openTab, usePreview = false }) => {
+const CodePen = ({ height = 500, id, openTab, usePreview = false }: CodePenprops) => {
   const [darkMode] = useDarkMode();
   const tabs = [openTab, 'result'].filter(i => i).join(',');
 

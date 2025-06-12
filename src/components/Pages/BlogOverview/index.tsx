@@ -17,7 +17,7 @@ const BlogOverview: MDXOverviewPage<BlogPostMeta> = ({ items }) => {
       <h1 className={styles.overviewSupport}>On Product, Code and other things.</h1>
       <div className={styles.overviewGrid}>
         { items.map((post, index) => (
-          <Link href={`blog/${post.slug}`} key={`post--${index}`}>
+          <Link legacyBehavior href={`blog/${post.slug}`} key={`post--${index}`}>
             <a className={[styles.postItem, 'box'].join(' ')}>
               <h2 className={styles.postTitle}>{post.title}</h2>
               <p className={styles.postIntro}>{post.abstract}</p>

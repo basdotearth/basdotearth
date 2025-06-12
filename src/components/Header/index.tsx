@@ -1,5 +1,3 @@
-import type { FC } from 'react';
-
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -14,7 +12,7 @@ interface HeaderProps {
   offset?: number;
 }
 
-const Header: FC<HeaderProps> = ({ fillBg = true, offset = 0 }) => {
+const Header = ({ fillBg = true, offset = 0 }: HeaderProps) => {
   const [darkMode, setDarkMode] = useDarkMode();
   const { route } = useRouter();
 
@@ -30,17 +28,17 @@ const Header: FC<HeaderProps> = ({ fillBg = true, offset = 0 }) => {
         <Link href="/">Bas Klinkhamer</Link>
       </div>
       <nav className={styles.textNav}>
-        <Link href="/">
+        <Link legacyBehavior href="/">
           <a className={classes({ [styles.activeLink]: route === '/' })}>
             Resum&eacute;
           </a>
         </Link>
-        <Link href="/blog">
+        <Link legacyBehavior href="/blog">
           <a className={classes({ [styles.activeLink]: route.startsWith('/blog') })}>
             Blog
           </a>
         </Link>
-        <Link href="/playground">
+        <Link legacyBehavior href="/playground">
           <a className={classes({ [styles.activeLink]: route.startsWith('/playground') })}>
           Playground
           </a>
@@ -54,7 +52,7 @@ const Header: FC<HeaderProps> = ({ fillBg = true, offset = 0 }) => {
             height={20}
           />
         </a>
-        <Link href="/rss.xml">
+        <Link legacyBehavior href="/rss.xml">
           <a><Icon icon={EIcons.RSS} width={20} height={20} /></a>
         </Link>
       </nav>

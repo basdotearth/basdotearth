@@ -1,8 +1,6 @@
-import { type FC } from 'react';
-
 import styles from './Footer.module.css';
 
-const Footer: FC = () => (
+const Footer = () => (
   <footer className={styles.footer}>
     <div className={styles.innerWrapper}>
       <div className={styles.footerBlock}>
