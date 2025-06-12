@@ -1,6 +1,5 @@
 import BlogContent from 'components/BlogContent';
 import Footer from 'components/Footer';
-import Head from 'components/Head';
 import Header from 'components/Header';
 import type { PageTypeContent } from 'types/mdx';
 import TagList from 'components/TagList';
@@ -32,7 +31,6 @@ type SinglePostProps = PageTypeContent<BlogPostMeta> | PageTypeContent<Playgroun
 
 const SinglePost = ({ code, meta }: SinglePostProps) => {
   return <>
-    <Head title={meta.title} description={meta.seoTitle} />
     <Header />
     <main className={styles.main}>
       <h1 className={styles.title}>{ meta.title }</h1>

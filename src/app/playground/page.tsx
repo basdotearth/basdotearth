@@ -1,8 +1,14 @@
+import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
 import type { PlaygroundMeta } from 'types/index';
 import PlaygroundOverview from 'components/Pages/PlaygroundOverview';
 import { collectStaticContent } from 'helpers/mdx';
+
+export const metadata: Metadata = {
+  title: 'Playground',
+  description: 'Quick snippets, POCs and TIL today.',
+};
 
 const Page = async () => {
   const result = await collectStaticContent<PlaygroundMeta>({

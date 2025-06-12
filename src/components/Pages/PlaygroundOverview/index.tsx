@@ -2,7 +2,6 @@ import Link from 'next/link';
 
 import type { CollectedResult } from 'types/mdx';
 import Footer from 'components/Footer';
-import Head from 'components/Head';
 import Header from 'components/Header';
 import type { PlaygroundMeta } from 'types/index';
 import TagList from 'components/TagList';
@@ -13,8 +12,6 @@ type PlaygroundOverviewProps = CollectedResult<PlaygroundMeta>;
 
 const PlaygroundOverview = ({ items }: PlaygroundOverviewProps) => {
   return <>
-
-    <Head title="Playground" description={`${items.length} snippets.`} />
     <Header />
     <main className={styles.overview}>
       <h1 className={styles.overviewTitle}>Playground</h1>

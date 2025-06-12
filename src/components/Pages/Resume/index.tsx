@@ -3,7 +3,6 @@ import React from 'react';
 
 import type { CombinedResult } from 'types/mdx';
 import Footer from 'components/Footer';
-import Head from 'components/Head';
 import Header from 'components/Header';
 import TagList from 'components/TagList';
 import { isoToMonthYear } from 'helpers/date';
@@ -22,7 +21,6 @@ export type ResumeProps = CombinedResult<{ experience: ExperienceMeta, education
 const Resume = ({ education, experience }: ResumeProps) => {
   const [expFilter, setExpFilter] = React.useState<JobType | null>(null);
   return <>
-    <Head title="Resume" description="Product Owner, Frontend Developer with 10+ years of experience and Agile Change Agent" />
     <section className={[styles.pageHeader, 'headerBG'].join(' ')}>
       <Header />
       <div className={styles.headerContent}>

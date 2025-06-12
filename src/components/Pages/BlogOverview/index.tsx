@@ -3,7 +3,6 @@ import Link from 'next/link';
 import type { BlogPostMeta } from 'types/index';
 import type { CollectedResult } from 'types/mdx';
 import Footer from 'components/Footer';
-import Head from 'components/Head';
 import Header from 'components/Header';
 
 import styles from './BlogOverview.module.css';
@@ -12,7 +11,6 @@ type BlogOverviewProps = CollectedResult<BlogPostMeta>;
 
 const BlogOverview = ({ items }: BlogOverviewProps) => {
   return <>
-    <Head title="Blog" description={`${items.length} blogposts on Product, Code and other things.`} />
     <Header />
     <main className={styles.overview}>
       <h1 className={styles.overviewTitle}>Blogposts</h1>

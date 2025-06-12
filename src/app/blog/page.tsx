@@ -1,8 +1,14 @@
+import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
 import BlogOverview from 'components/Pages/BlogOverview';
 import type { BlogPostMeta } from 'types/index';
 import { collectStaticContent } from 'helpers/mdx';
+
+export const metadata: Metadata = {
+  title: 'Blog',
+  description: 'Blogposts on Product, Code and other things.',
+};
 
 const Page = async () => {
   const result = await collectStaticContent<BlogPostMeta>({

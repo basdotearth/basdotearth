@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
 import type { BlogPostMeta } from 'types/index';
@@ -6,6 +7,19 @@ import SinglePost from 'components/Pages/SinglePost';
 import { collectStaticContentSlugs, getStaticContentBySlug } from 'helpers/mdx';
 
 export const dynamicParams = false;
+
+export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+  const { slug } = await params;
+  const result = await getStaticContentBySlug<BlogPostMeta>({ slug, type: 'posts' });
+  const meta: Metadata = {};
+
+  if ('meta' in result) {
+    meta.title = result.meta.title;
+    meta.description = result.meta.seoTitle;
+  }
+
+  return meta;
+};
 
 export const generateStaticParams = async () => {
   const slugs = await collectStaticContentSlugs('posts');
