@@ -1,6 +1,6 @@
 import type { DetailedHTMLProps, FC, HTMLAttributes, ReactElement } from 'react';
 
-import Highlight, { defaultProps } from 'prism-react-renderer';
+import { Highlight } from 'prism-react-renderer';
 
 import { classes } from 'helpers/classes';
 
@@ -15,7 +15,6 @@ const CodeSnippet: FC<CodeSnippetProps> = ({ children }) => {
   return <div className={styles.codeSnippetWrapper}>
     <div className={styles.codeSnippetLanguage}>{ language }</div>
     <Highlight
-      {...defaultProps }
       code={props.children}
 
       // @ts-ignore
