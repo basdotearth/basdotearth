@@ -28,20 +28,14 @@ const Header = ({ fillBg = true, offset = 0 }: HeaderProps) => {
         <Link href="/">Bas Klinkhamer</Link>
       </div>
       <nav className={styles.textNav}>
-        <Link legacyBehavior href="/">
-          <a className={classes({ [styles.activeLink]: route === '/' })}>
+        <Link className={classes({ [styles.activeLink]: route === '/' })} href="/">
             Resum&eacute;
-          </a>
         </Link>
-        <Link legacyBehavior href="/blog">
-          <a className={classes({ [styles.activeLink]: route.startsWith('/blog') })}>
+        <Link className={classes({ [styles.activeLink]: route.startsWith('/blog') })} href="/blog">
             Blog
-          </a>
         </Link>
-        <Link legacyBehavior href="/playground">
-          <a className={classes({ [styles.activeLink]: route.startsWith('/playground') })}>
+        <Link className={classes({ [styles.activeLink]: route.startsWith('/playground') })} href="/playground">
           Playground
-          </a>
         </Link>
       </nav>
       <nav className={styles.iconNav}>
@@ -52,8 +46,8 @@ const Header = ({ fillBg = true, offset = 0 }: HeaderProps) => {
             height={20}
           />
         </a>
-        <Link legacyBehavior href="/rss.xml">
-          <a><Icon icon={EIcons.RSS} width={20} height={20} /></a>
+        <Link href="/rss.xml">
+          <Icon icon={EIcons.RSS} width={20} height={20} />
         </Link>
       </nav>
     </div>

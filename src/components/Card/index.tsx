@@ -10,16 +10,19 @@ interface CardProps {
 }
 
 const Card = ({ link, title, children }: PropsWithChildren<CardProps>) => {
-  const withLink = <Link legacyBehavior href={link!}>
-    <a className={styles.card}>
+  const withLink = (
+    <Link href={link!} className={styles.card}>
       <h2>{title} &rarr;</h2>
       {children}
-    </a>
-  </Link>;
-  const noLink = <div className={styles.card}>
-    <h2>{title}</h2>
-    {children}
-  </div>;
+    </Link>
+  );
+  const noLink = (
+    <div className={styles.card}>
+      <h2>{title}</h2>
+      {children}
+    </div>
+  );
+
   return link ? withLink : noLink;
 };
 
