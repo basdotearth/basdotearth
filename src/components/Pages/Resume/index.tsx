@@ -1,9 +1,10 @@
+'use client';
 import React from 'react';
 
+import type { CombinedResult } from 'types/mdx';
 import Footer from 'components/Footer';
 import Head from 'components/Head';
 import Header from 'components/Header';
-import type { MDXCombinedPage } from 'types/mdx';
 import TagList from 'components/TagList';
 import { isoToMonthYear } from 'helpers/date';
 import { type EducationMeta, type ExperienceMeta, JobType } from 'types/index';
@@ -16,9 +17,9 @@ const jobTypeTitles: Record<JobType, string> = {
   [JobType.AGILE_CONSULT]: 'Agile Consultant',
 };
 
-export type ResumeProps = { experience: ExperienceMeta, education: EducationMeta };
+export type ResumeProps = CombinedResult<{ experience: ExperienceMeta, education: EducationMeta }, false>;
 
-const Resume: MDXCombinedPage<ResumeProps> = ({ education, experience }) => {
+const Resume = ({ education, experience }: ResumeProps) => {
   const [expFilter, setExpFilter] = React.useState<JobType | null>(null);
   return <>
     <Head title="Resume" description="Product Owner, Frontend Developer with 10+ years of experience and Agile Change Agent" />

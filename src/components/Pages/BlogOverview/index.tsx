@@ -1,14 +1,16 @@
 import Link from 'next/link';
 
 import type { BlogPostMeta } from 'types/index';
+import type { CollectedResult } from 'types/mdx';
 import Footer from 'components/Footer';
 import Head from 'components/Head';
 import Header from 'components/Header';
-import type { MDXOverviewPage } from 'types/mdx';
 
 import styles from './BlogOverview.module.css';
 
-const BlogOverview: MDXOverviewPage<BlogPostMeta> = ({ items }) => {
+type BlogOverviewProps = CollectedResult<BlogPostMeta>;
+
+const BlogOverview = ({ items }: BlogOverviewProps) => {
   return <>
     <Head title="Blog" description={`${items.length} blogposts on Product, Code and other things.`} />
     <Header />

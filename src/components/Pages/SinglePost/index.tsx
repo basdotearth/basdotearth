@@ -1,14 +1,8 @@
-import { useMemo } from 'react';
-
-import { getMDXComponent } from 'mdx-bundler/client';
-
-import CodeExample from 'components/CodeExample';
-import CodePen from 'components/CodePen';
-import CodeSnippet from 'components/CodeSnippet';
+import BlogContent from 'components/BlogContent';
 import Footer from 'components/Footer';
 import Head from 'components/Head';
 import Header from 'components/Header';
-import type { MDXStaticPage } from 'types/mdx';
+import type { PageTypeContent } from 'types/mdx';
 import TagList from 'components/TagList';
 import type { BlogPostMeta, PlaygroundMeta } from 'types/index';
 
@@ -34,9 +28,9 @@ const Timestamp = ({ publishedOn, updatedOn }: TimestampProps) => {
   </>;
 };
 
-const SinglePost: MDXStaticPage<BlogPostMeta | PlaygroundMeta> = ({ code, meta }) => {
-  const BlogContent = useMemo(() => getMDXComponent(code), [code]);
+type SinglePostProps = PageTypeContent<BlogPostMeta> | PageTypeContent<PlaygroundMeta>;
 
+const SinglePost = ({ code, meta }: SinglePostProps) => {
   return <>
     <Head title={meta.title} description={meta.seoTitle} />
     <Header />
@@ -47,9 +41,7 @@ const SinglePost: MDXStaticPage<BlogPostMeta | PlaygroundMeta> = ({ code, meta }
       </div>
       {'abstract' in meta && <p className="lead">{ meta.abstract }</p>}
       <div className={styles.content}>
-        <BlogContent
-          components={{ CodeExample, CodePen, pre: CodeSnippet }}
-        />
+        <BlogContent code={code} />
       </div>
       {'tags' in meta && <TagList tags={meta.tags} />}
     </main>

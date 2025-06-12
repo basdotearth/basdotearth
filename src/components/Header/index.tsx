@@ -1,5 +1,6 @@
+'use client';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 import { classes } from 'helpers/classes';
 import useDarkMode from 'hooks/useDarkMode';
@@ -14,7 +15,7 @@ interface HeaderProps {
 
 const Header = ({ fillBg = true, offset = 0 }: HeaderProps) => {
   const [darkMode, setDarkMode] = useDarkMode();
-  const { route } = useRouter();
+  const path = usePathname();
 
   return <header
     className={classes({
@@ -28,13 +29,13 @@ const Header = ({ fillBg = true, offset = 0 }: HeaderProps) => {
         <Link href="/">Bas Klinkhamer</Link>
       </div>
       <nav className={styles.textNav}>
-        <Link className={classes({ [styles.activeLink]: route === '/' })} href="/">
+        <Link className={classes({ [styles.activeLink]: path === '/' })} href="/">
             Resum&eacute;
         </Link>
-        <Link className={classes({ [styles.activeLink]: route.startsWith('/blog') })} href="/blog">
+        <Link className={classes({ [styles.activeLink]: path.startsWith('/blog') })} href="/blog">
             Blog
         </Link>
-        <Link className={classes({ [styles.activeLink]: route.startsWith('/playground') })} href="/playground">
+        <Link className={classes({ [styles.activeLink]: path.startsWith('/playground') })} href="/playground">
           Playground
         </Link>
       </nav>
