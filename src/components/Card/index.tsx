@@ -1,4 +1,4 @@
-import { type FC, type PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 
 import Link from 'next/link';
 
@@ -9,17 +9,20 @@ interface CardProps {
   link?: string;
 }
 
-const Card: FC<PropsWithChildren<CardProps>> = ({ link, title, children }) => {
-  const withLink = <Link href={link!}>
-    <a className={styles.card}>
+const Card = ({ link, title, children }: PropsWithChildren<CardProps>) => {
+  const withLink = (
+    <Link href={link!} className={styles.card}>
       <h2>{title} &rarr;</h2>
       {children}
-    </a>
-  </Link>;
-  const noLink = <div className={styles.card}>
-    <h2>{title}</h2>
-    {children}
-  </div>;
+    </Link>
+  );
+  const noLink = (
+    <div className={styles.card}>
+      <h2>{title}</h2>
+      {children}
+    </div>
+  );
+
   return link ? withLink : noLink;
 };
 

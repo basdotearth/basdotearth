@@ -1,15 +1,7 @@
-import type { FC } from 'react';
-import { useMemo } from 'react';
-
-import { getMDXComponent } from 'mdx-bundler/client';
-
-import CodeExample from 'components/CodeExample';
-import CodePen from 'components/CodePen';
-import CodeSnippet from 'components/CodeSnippet';
+import BlogContent from 'components/BlogContent';
 import Footer from 'components/Footer';
-import Head from 'components/Head';
 import Header from 'components/Header';
-import type { MDXStaticPage } from 'types/mdx';
+import type { PageTypeContent } from 'types/mdx';
 import TagList from 'components/TagList';
 import type { BlogPostMeta, PlaygroundMeta } from 'types/index';
 
@@ -20,7 +12,7 @@ interface TimestampProps {
   updatedOn?: Date;
 }
 
-const Timestamp: FC<TimestampProps> = ({ publishedOn, updatedOn }) => {
+const Timestamp = ({ publishedOn, updatedOn }: TimestampProps) => {
   const date = new Date(publishedOn);
   const tz: [string, { timeZone: string }] = ['nl-NL', { timeZone: 'CET' }];
   const update = updatedOn ? new Date(updatedOn) : null;
@@ -35,11 +27,10 @@ const Timestamp: FC<TimestampProps> = ({ publishedOn, updatedOn }) => {
   </>;
 };
 
-const SinglePost: MDXStaticPage<BlogPostMeta | PlaygroundMeta> = ({ code, meta }) => {
-  const BlogContent = useMemo(() => getMDXComponent(code), [code]);
+type SinglePostProps = PageTypeContent<BlogPostMeta> | PageTypeContent<PlaygroundMeta>;
 
+const SinglePost = ({ code, meta }: SinglePostProps) => {
   return <>
-    <Head title={meta.title} description={meta.seoTitle} />
     <Header />
     <main className={styles.main}>
       <h1 className={styles.title}>{ meta.title }</h1>
@@ -48,9 +39,7 @@ const SinglePost: MDXStaticPage<BlogPostMeta | PlaygroundMeta> = ({ code, meta }
       </div>
       {'abstract' in meta && <p className="lead">{ meta.abstract }</p>}
       <div className={styles.content}>
-        <BlogContent
-          components={{ CodeExample, CodePen, pre: CodeSnippet }}
-        />
+        <BlogContent code={code} />
       </div>
       {'tags' in meta && <TagList tags={meta.tags} />}
     </main>

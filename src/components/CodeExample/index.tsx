@@ -1,5 +1,3 @@
-import type { FC } from 'react';
-
 import '@reach/tabs/styles.css';
 import PlaygroundComponent from '@agney/playground';
 
@@ -16,7 +14,7 @@ interface CodeExampleProps {
   defaultTab?: 'markup' | 'css' | 'javascript';
 }
 
-const CodeExample: FC<CodeExampleProps> = ({ id, snippet, defaultTab = 'javascript' }) => {
+const CodeExample = ({ id, snippet, defaultTab = 'javascript' }: CodeExampleProps) => {
   return (
     <div className={styles.playgroundWrapper}>
       <PlaygroundComponent

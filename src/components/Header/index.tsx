@@ -1,7 +1,6 @@
-import type { FC } from 'react';
-
+'use client';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 import { classes } from 'helpers/classes';
 import useDarkMode from 'hooks/useDarkMode';
@@ -14,9 +13,9 @@ interface HeaderProps {
   offset?: number;
 }
 
-const Header: FC<HeaderProps> = ({ fillBg = true, offset = 0 }) => {
+const Header = ({ fillBg = true, offset = 0 }: HeaderProps) => {
   const [darkMode, setDarkMode] = useDarkMode();
-  const { route } = useRouter();
+  const path = usePathname();
 
   return <header
     className={classes({
@@ -30,20 +29,14 @@ const Header: FC<HeaderProps> = ({ fillBg = true, offset = 0 }) => {
         <Link href="/">Bas Klinkhamer</Link>
       </div>
       <nav className={styles.textNav}>
-        <Link href="/">
-          <a className={classes({ [styles.activeLink]: route === '/' })}>
+        <Link className={classes({ [styles.activeLink]: path === '/' })} href="/">
             Resum&eacute;
-          </a>
         </Link>
-        <Link href="/blog">
-          <a className={classes({ [styles.activeLink]: route.startsWith('/blog') })}>
+        <Link className={classes({ [styles.activeLink]: path.startsWith('/blog') })} href="/blog">
             Blog
-          </a>
         </Link>
-        <Link href="/playground">
-          <a className={classes({ [styles.activeLink]: route.startsWith('/playground') })}>
+        <Link className={classes({ [styles.activeLink]: path.startsWith('/playground') })} href="/playground">
           Playground
-          </a>
         </Link>
       </nav>
       <nav className={styles.iconNav}>
@@ -55,7 +48,7 @@ const Header: FC<HeaderProps> = ({ fillBg = true, offset = 0 }) => {
           />
         </a>
         <Link href="/rss.xml">
-          <a><Icon icon={EIcons.RSS} width={20} height={20} /></a>
+          <Icon icon={EIcons.RSS} width={20} height={20} />
         </Link>
       </nav>
     </div>
